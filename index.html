@@ -368,6 +368,67 @@ function yesNo(v){
 
 function safe(v){ return String(v ?? "").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
+
+
+function firstValue(row, keys){
+  for(const k of keys){
+    if(row[k] !== undefined && row[k] !== null && String(row[k]).trim() !== "") return row[k];
+  }
+  return "";
+}
+
+function normalizeUnifiedRow(row, idx){
+  const matchRaw = firstValue(row, ["match_asset", "Match Asset"]);
+  const match = matchRaw === true || String(matchRaw).toLowerCase() === "true" || String(matchRaw).toLowerCase() === "sim";
+
+  return {
+    ...row,
+    _idx: idx,
+    match_asset: match,
+    tipo_match_asset: firstValue(row, ["tipo_match_asset", "Tipo Match Asset"]),
+    asset_codigo_siico: firstValue(row, ["asset_codigo_siico", "Código SIICO", "Codigo SIICO", "Código SIICO Num", "Codigo SIICO Num"]),
+    asset_cnpj: firstValue(row, ["asset_cnpj", "CNPJ"]),
+    asset_nome_fundo: firstValue(row, ["asset_nome_fundo", "Nome Fundo Asset", "Fundo Asset"]),
+    asset_razao_social: firstValue(row, ["asset_razao_social", "Razão Social", "Razao Social"]),
+    perfil_risco: firstValue(row, ["perfil_risco", "Risco", "Perfil de Risco"]),
+    classificacao_cvm: firstValue(row, ["classificacao_cvm", "Classificação CVM", "Classificacao CVM"]),
+    estrategia: firstValue(row, ["estrategia", "Estratégia", "Estrategia"]),
+    benchmark: firstValue(row, ["benchmark", "Benchmark"]),
+    classificacao_tributaria: firstValue(row, ["classificacao_tributaria", "Tributação", "Tributacao"]),
+    classificacao_investidor: firstValue(row, ["classificacao_investidor", "Classificação Investidor", "Classificacao Investidor"]),
+    aberto_captacao: firstValue(row, ["aberto_captacao", "Aberto Captação", "Aberto Captacao"]),
+    asg: firstValue(row, ["asg", "ASG"]),
+    lancamento: firstValue(row, ["lancamento", "Lançamento", "Lancamento"]),
+    movimentacao_automatica: firstValue(row, ["movimentacao_automatica", "Movimentação Automática", "Movimentacao Automatica"]),
+    adiantamento_resgate: firstValue(row, ["adiantamento_resgate", "Adiantamento Resgate"]),
+    taxa_adm_cliente: firstValue(row, ["taxa_adm_cliente", "Taxa Adm Cliente (%)", "Taxa Adm Cliente"]),
+    taxa_adm_maxima: firstValue(row, ["taxa_adm_maxima", "Taxa Adm Máxima (%)", "Taxa Adm Maxima (%)"]),
+    aplicacao_inicial: firstValue(row, ["aplicacao_inicial", "Aplicação Inicial (R$)", "Aplicacao Inicial (R$)"]),
+    aplicacao_adicional_minima: firstValue(row, ["aplicacao_adicional_minima", "Aplicação Adicional Mínima (R$)", "Aplicacao Adicional Minima (R$)"]),
+    saldo_minimo: firstValue(row, ["saldo_minimo", "Saldo Mínimo (R$)", "Saldo Minimo (R$)"]),
+    resgate_minimo: firstValue(row, ["resgate_minimo", "Resgate Mínimo (R$)", "Resgate Minimo (R$)"]),
+    horario_resgate: firstValue(row, ["horario_resgate", "Horário Resgate", "Horario Resgate"]),
+    horario_limite: firstValue(row, ["horario_limite", "Horário Limite", "Horario Limite"]),
+    conversao_aplicacao: firstValue(row, ["conversao_aplicacao", "Conversão Aplicação", "Conversao Aplicacao"]),
+    conversao_resgate: firstValue(row, ["conversao_resgate", "Conversão Resgate", "Conversao Resgate"]),
+    pagamento_resgate: firstValue(row, ["pagamento_resgate", "Pagamento Resgate"]),
+    publico_alvo: firstValue(row, ["publico_alvo", "Público Alvo Asset", "Publico Alvo Asset"]),
+    segmento: firstValue(row, ["segmento", "Segmento Asset"]),
+    destino: firstValue(row, ["destino", "Destino"]),
+    observacao: firstValue(row, ["observacao", "Observação Asset", "Observacao Asset"]),
+    link_pagina_fundo: firstValue(row, ["link_pagina_fundo", "Link Página Fundo", "Link Pagina Fundo", "URL"]),
+    link_lamina: firstValue(row, ["link_lamina", "Link Lâmina", "Link Lamina"]),
+    link_regulamento: firstValue(row, ["link_regulamento", "Link Regulamento"]),
+    link_termo_adesao: firstValue(row, ["link_termo_adesao", "Link Termo Adesão", "Link Termo Adesao"]),
+    link_fato_relevante: firstValue(row, ["link_fato_relevante", "Link Fato Relevante"]),
+    link_info_compl: firstValue(row, ["link_info_compl", "Link Info Complementar"]),
+    link_sumario: firstValue(row, ["link_sumario", "Link Sumário", "Link Sumario"]),
+    link_due_diligence: firstValue(row, ["link_due_diligence", "Link Due Diligence"]),
+    asset_dt_cota_atual: firstValue(row, ["asset_dt_cota_atual", "Data Cota Asset"]),
+    asset_dt_inicial: firstValue(row, ["asset_dt_inicial", "Data Inicial Asset"])
+  };
+}
+
 function normalizeLiquidity(v){
   const s = String(v ?? "").toUpperCase();
   if(!s) return "";
@@ -460,10 +521,10 @@ async function autoLoad(){
   // 1) Se existir base unificada, usa direto.
   try{
     const unified = await fetchJson(paths.unificado);
-    dataRows = unified.map((x,i) => ({...x, _idx:i}));
+    dataRows = unified.map((x,i) => normalizeUnifiedRow(x, i));
     csvRows = dataRows;
-    assetRows = [];
-    afterDataLoaded(`Carregado <b>${paths.unificado}</b> automaticamente.`);
+    assetRows = dataRows.filter(r => r.match_asset);
+    afterDataLoaded(`Carregado <b>${paths.unificado}</b> automaticamente. Base já veio unificada pelo robô.`);
     return;
   }catch(e){
     console.warn("Base unificada não encontrada/indisponível:", e);
