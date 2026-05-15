@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   atualizar:
     runs-on: ubuntu-latest
@@ -29,14 +32,51 @@ jobs:
       - name: Instalar Chrome
         uses: browser-actions/setup-chrome@v1
 
+      - name: Verificar ambiente
+        run: |
+          python --version
+          google-chrome --version || true
+          ls -la
+
       - name: Executar robô
         run: |
           python robo_sipii_asset_unificado.py
+
+      - name: Mostrar arquivos gerados
+        if: always()
+        run: |
+          echo "Arquivos na raiz:"
+          ls -la
+
+          echo ""
+          echo "Pasta data:"
+          ls -la data || true
+
+          echo ""
+          echo "Pasta historico:"
+          ls -la historico || true
+
+          echo ""
+          echo "Pasta historico/json:"
+          ls -la historico/json || true
+
+          echo ""
+          echo "Log de execução:"
+          cat execucao.log || true
 
       - name: Commit dos arquivos atualizados
         run: |
           git config user.name "actions-user"
           git config user.email "actions@github.com"
-          git add dados_atuais.csv data/ historico/ execucao.log sipii_caixa_*.csv sipii_caixa_*.xlsx
+
+          git add dados_atuais.csv || true
+          git add data/ || true
+          git add historico/ || true
+          git add sipii_caixa_*.csv || true
+          git add sipii_caixa_*.xlsx || true
+
+          # O .gitignore bloqueia arquivos .log, então forçamos o log.
+          git add -f execucao.log || true
+
           git commit -m "Dados atualizados via robô v2" || echo "Sem alterações para commit"
           git push
