@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo Inteligente de Fundos CAIXA — Offline/Unificado</title>
+  <style>
+    :root{
+      --bg:#07080f;--bg2:#0d0f1a;--bg3:#131629;--bg4:#1a1f3a;
+      --gold:#c8973a;--gold2:#e8bb6a;--gold-dim:rgba(200,151,58,.12);
+      --text:#dde1ec;--muted:#7b849f;--muted2:#4a5270;
+      --green:#34d17a;--red:#f05656;--blue:#5b9cf6;--orange:#fb923c;
+      --border:rgba(200,151,58,.16);--border2:rgba(255,255,255,.06);
+      --shadow:0 10px 40px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);
+      min-height:100vh;overflow-x:hidden
+    }
+    body::before{
+      content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+      background:radial-gradient(ellipse 70% 40% at 10% 0%,rgba(200,151,58,.08),transparent 60%),
+                 radial-gradient(ellipse 50% 50% at 90% 100%,rgba(91,156,246,.05),transparent 55%);
+    }
+    .page{position:relative;z-index:1;max-width:1760px;margin:0 auto;padding:34px 26px 70px}
+    header{
+      display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;
+      padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--border)
+    }
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{
+      width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));color:#080912;
+      font-weight:900;font-size:1.4rem;box-shadow:0 0 28px rgba(200,151,58,.24)
+    }
+    h1{font-size:clamp(1.35rem,2.5vw,2.05rem);color:var(--gold2);line-height:1.1}
+    .subtitle{margin-top:6px;color:var(--muted);font-size:.82rem;letter-spacing:.02em}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .badge{
+      border:1px solid var(--border);background:var(--bg2);border-radius:999px;
+      padding:8px 13px;color:var(--muted);font-size:.74rem;white-space:nowrap
+    }
+    .badge strong{color:var(--gold2)}
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:14px;margin-bottom:24px}
+    .kpi{
+      position:relative;overflow:hidden;background:var(--bg2);border:1px solid var(--border);
+      border-radius:15px;padding:18px 17px;box-shadow:0 4px 24px rgba(0,0,0,.16)
+    }
+    .kpi::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+    .kpi-label{font-size:.65rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+    .kpi-value{font-size:1.72rem;font-weight:800;color:var(--gold2);line-height:1}
+    .kpi-sub{margin-top:7px;color:var(--muted);font-size:.68rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .ok{color:var(--green)!important}.bad{color:var(--red)!important}.blue{color:var(--blue)!important}.muted{color:var(--muted)!important}
+    .panel{
+      background:rgba(13,15,26,.92);border:1px solid var(--border);border-radius:16px;
+      padding:16px;margin-bottom:20px;box-shadow:var(--shadow)
+    }
+    .panel-title{color:var(--gold2);font-weight:800;font-size:.92rem;margin-bottom:12px}
+    .controls-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+    input,select,button{
+      font:inherit;background:var(--bg3);border:1px solid var(--border2);
+      color:var(--text);border-radius:10px;padding:10px 12px;outline:none;font-size:.83rem
+    }
+    input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim)}
+    #search{min-width:280px;flex:1}
+    button{cursor:pointer;transition:.15s;border-color:var(--border);font-weight:700}
+    button:hover{border-color:var(--gold);color:var(--gold2);background:var(--gold-dim)}
+    .btn-primary{background:linear-gradient(135deg,rgba(200,151,58,.20),rgba(232,187,106,.12));border-color:var(--gold);color:var(--gold2)}
+    .btn-small{padding:7px 9px;font-size:.72rem}
+    .dropzone{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:10px
+    }
+    .dropcard{
+      border:1px dashed var(--border);border-radius:12px;padding:12px;background:rgba(255,255,255,.02);
+      color:var(--muted);font-size:.78rem;line-height:1.45
+    }
+    .dropcard b{color:var(--text)}
+    .status-line{color:var(--muted);font-size:.76rem;line-height:1.55;margin-top:6px}
+    .table-wrap{
+      border:1px solid var(--border);border-radius:16px;overflow:auto;background:var(--bg2);box-shadow:var(--shadow)
+    }
+    table{width:100%;border-collapse:collapse;min-width:1530px}
+    thead{background:linear-gradient(90deg,var(--bg4),var(--bg3));position:sticky;top:0;z-index:2}
+    th{
+      text-align:left;padding:13px 12px;color:var(--gold);font-size:.64rem;text-transform:uppercase;
+      letter-spacing:.09em;cursor:pointer;white-space:nowrap;user-select:none
+    }
+    th:hover{color:var(--gold2)}
+    td{
+      padding:11px 12px;border-top:1px solid var(--border2);font-size:.78rem;white-space:nowrap;
+      vertical-align:middle
+    }
+    tbody tr:hover{background:rgba(200,151,58,.045)}
+    td.fundo{white-space:normal;min-width:320px;max-width:390px;font-weight:700;line-height:1.35}
+    .mini{display:block;font-size:.67rem;color:var(--muted);font-weight:500;margin-top:4px}
+    .pill{
+      display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);font-size:.68rem;font-weight:800
+    }
+    .pill.open{color:var(--green);background:rgba(52,209,122,.08);border-color:rgba(52,209,122,.2)}
+    .pill.closed{color:var(--red);background:rgba(240,86,86,.08);border-color:rgba(240,86,86,.2)}
+    .pct{font-weight:800}.pct.pos{color:var(--green)}.pct.neg{color:var(--red)}.pct.zero{color:var(--muted)}
+    .source-chip{font-size:.62rem;padding:3px 7px;border-radius:999px;background:rgba(91,156,246,.08);color:var(--blue);border:1px solid rgba(91,156,246,.20)}
+    .source-chip.no{background:rgba(240,86,86,.08);color:var(--red);border-color:rgba(240,86,86,.2)}
+    .pagination{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-size:.77rem}
+    .pager{display:flex;gap:6px;align-items:center}
+    .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:20;display:none}
+    .drawer-backdrop.open{display:block}
+    .drawer{
+      position:fixed;top:0;right:-560px;width:min(560px,96vw);height:100vh;z-index:21;
+      background:#0b0d17;border-left:1px solid var(--border);box-shadow:-18px 0 50px rgba(0,0,0,.45);
+      transition:right .22s ease;padding:22px;overflow:auto
+    }
+    .drawer.open{right:0}
+    .drawer-header{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:16px}
+    .drawer h2{color:var(--gold2);font-size:1.18rem;line-height:1.3}
+    .drawer-sub{color:var(--muted);font-size:.76rem;margin-top:8px}
+    .section{border-top:1px solid rgba(255,255,255,.07);padding-top:15px;margin-top:15px}
+    .section h3{font-size:.73rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+    .row{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.045);font-size:.8rem}
+    .row span:first-child{color:var(--muted);min-width:145px}
+    .row strong{text-align:right;font-weight:700;overflow-wrap:anywhere}
+    .links{display:flex;flex-wrap:wrap;gap:8px}
+    .links a{
+      color:var(--gold2);text-decoration:none;border:1px solid var(--border);border-radius:999px;
+      padding:7px 10px;font-size:.74rem;background:rgba(200,151,58,.06)
+    }
+    .warn{
+      background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);
+      color:#fdba74;padding:11px 12px;border-radius:12px;font-size:.78rem;line-height:1.55;margin-bottom:14px
+    }
+    footer{text-align:center;color:var(--muted2);font-size:.7rem;letter-spacing:.03em;margin-top:34px;line-height:1.7}
+    @media(max-width:768px){.page{padding:20px 14px 50px}.kpi-grid{grid-template-columns:repeat(2,1fr)}.controls-row{align-items:stretch}.controls-row>*{width:100%}#search{min-width:0}.badges{justify-content:flex-start}}
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="brand">
+      <div class="logo">E</div>
+      <div>
+        <h1>Catálogo Inteligente de Fundos CAIXA</h1>
+        <div class="subtitle">CSV do robô para performance + JSON Asset para cadastro, liquidez, taxa, benchmark e links</div>
+      </div>
+    </div>
+    <div class="badges">
+      <div class="badge" id="badgeMode"><strong>Modo:</strong> carregando...</div>
+      <div class="badge" id="badgeCsv"><strong>CSV:</strong> aguardando</div>
+      <div class="badge" id="badgeJson"><strong>JSON:</strong> aguardando</div>
+    </div>
+  </header>
+
+  <section class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Fundos no painel</div><div class="kpi-value" id="kpiTotal">—</div><div class="kpi-sub">após unificação/filtro</div></div>
+    <div class="kpi"><div class="kpi-label">Match com Asset</div><div class="kpi-value blue" id="kpiMatch">—</div><div class="kpi-sub">cruzamento CSV × JSON</div></div>
+    <div class="kpi"><div class="kpi-label">Abertos captação</div><div class="kpi-value ok" id="kpiOpen">—</div><div class="kpi-sub">campo ic_aberto_captacao</div></div>
+    <div class="kpi"><div class="kpi-label">PL total</div><div class="kpi-value" id="kpiPL">—</div><div class="kpi-sub">R$ milhões, preferência CSV</div></div>
+    <div class="kpi"><div class="kpi-label">Melhor 12M</div><div class="kpi-value ok" id="kpiBest">—</div><div class="kpi-sub" id="kpiBestName">—</div></div>
+    <div class="kpi"><div class="kpi-label">Pior 12M</div><div class="kpi-value bad" id="kpiWorst">—</div><div class="kpi-sub" id="kpiWorstName">—</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-title">Carga de dados</div>
+    <div class="controls-row">
+      <button class="btn-primary" id="btnCsv">Carregar CSV manual</button>
+      <button class="btn-primary" id="btnJson">Carregar JSON Asset manual</button>
+      <button id="btnAuto">Tentar carga automática</button>
+      <button id="btnClear">Limpar dados</button>
+    </div>
+
+    <input type="file" id="fileCsv" accept=".csv,.txt" style="display:none" />
+    <input type="file" id="fileJson" accept=".json" style="display:none" />
+
+    <div class="dropzone">
+      <div class="dropcard"><b>Offline com duplo clique:</b><br>use os botões manuais e selecione <code>dados_atuais.csv</code> e <code>fundos_asset.json</code>.</div>
+      <div class="dropcard"><b>Local server/GitHub Pages:</b><br>a página tenta carregar automaticamente <code>dados_atuais.csv</code>, <code>data/fundos_asset.json</code> e, se existir, <code>data/fundos_unificado.json</code>.</div>
+      <div class="dropcard"><b>Regra de prioridade:</b><br>performance/cota/PL vêm do CSV; cadastro/taxa/liquidez/links vêm do JSON Asset.</div>
+    </div>
+    <div class="status-line" id="statusLine">Aguardando carregamento das bases.</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-title">Filtros</div>
+    <div class="controls-row">
+      <input id="search" placeholder="Buscar por fundo, categoria, risco, benchmark, liquidez, CNPJ..." />
+      <select id="filterPerfil">
+        <option value="">Perfil: todos</option>
+        <option value="PF">PF</option>
+        <option value="PJ">PJ</option>
+        <option value="GOV">GOV</option>
+        <option value="RPPS">RPPS</option>
+      </select>
+      <select id="filterRisco"><option value="">Risco: todos</option></select>
+      <select id="filterCategoria"><option value="">Categoria: todas</option></select>
+      <select id="filterBenchmark"><option value="">Benchmark: todos</option></select>
+      <select id="filterCaptacao">
+        <option value="">Captação: todos</option>
+        <option value="Sim">Aberto</option>
+        <option value="Não">Fechado</option>
+      </select>
+      <select id="filterLiquidez">
+        <option value="">Liquidez: todas</option>
+        <option value="D+00">D+0</option>
+        <option value="D+01">D+1</option>
+        <option value="D+03">D+3</option>
+        <option value="D+05">D+5</option>
+      </select>
+      <select id="perPage">
+        <option value="25">25 por página</option>
+        <option value="50">50 por página</option>
+        <option value="100">100 por página</option>
+        <option value="99999">Todos</option>
+      </select>
+      <button id="btnResetFilters">Limpar filtros</button>
+    </div>
+  </section>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th data-sort="Fundo">Fundo</th>
+          <th data-sort="Categoria">Categoria</th>
+          <th data-sort="perfil_risco">Risco</th>
+          <th data-sort="benchmark">Benchmark</th>
+          <th data-sort="taxa_adm_cliente">Taxa Adm.</th>
+          <th data-sort="aplicacao_inicial">Aplicação Inicial</th>
+          <th data-sort="pagamento_resgate">Liquidez</th>
+          <th data-sort="aberto_captacao">Captação</th>
+          <th data-sort="Variacao Dia (%)">Dia</th>
+          <th data-sort="Acum. Mes (%)">Mês</th>
+          <th data-sort="Acum. Ano (%)">Ano</th>
+          <th data-sort="Acum. 12M (%)">12M</th>
+          <th data-sort="PL (milhoes R$)">PL</th>
+          <th data-sort="match_asset">Match</th>
+          <th>Detalhes</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr><td colspan="15" class="muted">Aguardando dados. Use a carga automática ou os botões manuais.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <div id="resultInfo">0 registros</div>
+    <div class="pager">
+      <button class="btn-small" id="prevPage">‹ Anterior</button>
+      <span id="pageInfo">Página 1</span>
+      <button class="btn-small" id="nextPage">Próxima ›</button>
+    </div>
+  </div>
+
+  <footer>
+    Dashboard offline/online para análise consultiva · Desenvolvido para cruzar dados SIPII/robô com JSON CAIXA Asset.
+  </footer>
+</div>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <h2 id="drawerTitle">Detalhes</h2>
+      <div class="drawer-sub" id="drawerSub">—</div>
+    </div>
+    <button class="btn-small" id="closeDrawer">Fechar</button>
+  </div>
+  <div id="drawerContent"></div>
+</aside>
+
+<script>
+/* =======================
+   Estado global
+======================= */
+let csvRows = [];
+let assetRows = [];
+let dataRows = [];
+let filteredRows = [];
+let sortKey = "Acum. 12M (%)";
+let sortDir = -1;
+let currentPage = 1;
+let manualMode = false;
+
+const paths = {
+  unificado: "data/fundos_unificado.json",
+  csv: "dados_atuais.csv",
+  asset: "data/fundos_asset.json"
+};
+
+/* =======================
+   Utilidades
+======================= */
+function $(id){ return document.getElementById(id); }
+
+function setStatus(msg){ $("statusLine").innerHTML = msg; }
+
+function normalizeText(txt){
+  return String(txt ?? "")
+    .toUpperCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\(\d+\)/g, " ")
+    .replace(/[^\w\s%+.-]/g, " ")
+    .replace(/\bRESP\b/g, " ")
+    .replace(/\bLTDA\b/g, " ")
+    .replace(/\bRL\b/g, " ")
+    .replace(/\bRESPONSABILIDADE\b/g, " ")
+    .replace(/\bLIMITADA\b/g, " ")
+    .replace(/\bFUNDO\b/g, " ")
+    .replace(/\bINVESTIMENTO\b/g, " ")
+    .replace(/\bCLASSE\b/g, " ")
+    .replace(/\bDE\b/g, " ")
+    .replace(/\bDA\b/g, " ")
+    .replace(/\bDO\b/g, " ")
+    .replace(/\bDOS\b/g, " ")
+    .replace(/\bDAS\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function digitsOnly(v){ return String(v ?? "").replace(/\D/g, ""); }
+
+function toNumber(v){
+  if(v === null || v === undefined) return null;
+  if(typeof v === "number") return Number.isFinite(v) ? v : null;
+  let s = String(v).trim();
+  if(!s || s === "-" || s === "—" || s.toUpperCase() === "INDISPONIVEL") return null;
+  s = s.replace("%","").replace(/\s/g,"");
+  if(s.includes(",") && s.includes(".")){
+    s = s.replace(/\./g,"").replace(",",".");
+  } else if(s.includes(",")){
+    s = s.replace(",",".");
+  }
+  const n = Number(s);
+  return Number.isFinite(n) ? n : null;
+}
+
+function fmtPct(v){
+  const n = toNumber(v);
+  if(n === null) return `<span class="muted">—</span>`;
+  const cls = n > 0 ? "pos" : n < 0 ? "neg" : "zero";
+  const sign = n > 0 ? "+" : "";
+  const shown = String(v).includes(",") ? String(v) : n.toLocaleString("pt-BR", {minimumFractionDigits:2, maximumFractionDigits:2});
+  return `<span class="pct ${cls}">${sign}${shown}%</span>`;
+}
+
+function fmtCurrency(v){
+  const n = toNumber(v);
+  if(n === null) return "—";
+  return n.toLocaleString("pt-BR", {style:"currency", currency:"BRL"});
+}
+
+function fmtNumber(v, digits=2){
+  const n = toNumber(v);
+  if(n === null) return "—";
+  return n.toLocaleString("pt-BR", {maximumFractionDigits:digits});
+}
+
+function yesNo(v){
+  if(v === true) return "Sim";
+  if(v === false) return "Não";
+  if(v === "Sim" || v === "Não") return v;
+  if(String(v).toLowerCase() === "true") return "Sim";
+  if(String(v).toLowerCase() === "false") return "Não";
+  return "";
+}
+
+function safe(v){ return String(v ?? "").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+function normalizeLiquidity(v){
+  const s = String(v ?? "").toUpperCase();
+  if(!s) return "";
+  const m = s.match(/D\+0*(\d+)/);
+  if(m) return "D+" + String(Number(m[1]));
+  return s.replace(/\s+/g," ");
+}
+
+function isUnavailableLink(url){
+  if(!url) return true;
+  const s = String(url).trim().toUpperCase();
+  return !s || s === "INDISPONIVEL" || s === "NÃO SE APLICA" || s === "NAO SE APLICA";
+}
+
+/* =======================
+   Parser CSV sem dependência externa
+======================= */
+function detectDelimiter(text){
+  const firstLine = text.split(/\r?\n/).find(l => l.trim());
+  if(!firstLine) return ",";
+  const candidates = ["\t",";","|",","];
+  let best = ",", bestCount = -1;
+  for(const c of candidates){
+    const count = (firstLine.match(new RegExp(c === "\t" ? "\\t" : "\\" + c, "g")) || []).length;
+    if(count > bestCount){ best = c; bestCount = count; }
+  }
+  return best;
+}
+
+function parseDelimited(text){
+  if(text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
+  const delimiter = detectDelimiter(text);
+  const rows = [];
+  let row = [], field = "", inQuotes = false;
+
+  for(let i=0;i<text.length;i++){
+    const ch = text[i], next = text[i+1];
+    if(ch === '"'){
+      if(inQuotes && next === '"'){ field += '"'; i++; }
+      else inQuotes = !inQuotes;
+    } else if(ch === delimiter && !inQuotes){
+      row.push(field); field = "";
+    } else if((ch === "\n" || ch === "\r") && !inQuotes){
+      if(ch === "\r" && next === "\n") i++;
+      row.push(field); field = "";
+      if(row.some(x => String(x).trim() !== "")) rows.push(row);
+      row = [];
+    } else {
+      field += ch;
+    }
+  }
+  row.push(field);
+  if(row.some(x => String(x).trim() !== "")) rows.push(row);
+
+  if(!rows.length) return [];
+  let headers = rows[0].map(h => String(h).trim());
+  // Se a primeira célula vier vazia por causa de tab inicial do GitHub/cópia, remove.
+  if(headers[0] === ""){
+    headers = headers.slice(1);
+    for(let i=1;i<rows.length;i++) rows[i] = rows[i].slice(1);
+  }
+
+  return rows.slice(1).map(r => {
+    const obj = {};
+    headers.forEach((h,i) => obj[h] = (r[i] ?? "").trim());
+    return obj;
+  }).filter(obj => Object.values(obj).some(v => String(v).trim() !== ""));
+}
+
+/* =======================
+   Carregamento
+======================= */
+async function fetchJson(url){
+  const r = await fetch(url + "?v=" + Date.now());
+  if(!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+  return await r.json();
+}
+
+async function fetchText(url){
+  const r = await fetch(url + "?v=" + Date.now());
+  if(!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+  return await r.text();
+}
+
+async function autoLoad(){
+  manualMode = false;
+  $("badgeMode").innerHTML = "<strong>Modo:</strong> automático";
+  setStatus("Tentando carregar automaticamente os arquivos...");
+
+  // 1) Se existir base unificada, usa direto.
+  try{
+    const unified = await fetchJson(paths.unificado);
+    dataRows = unified.map((x,i) => ({...x, _idx:i}));
+    csvRows = dataRows;
+    assetRows = [];
+    afterDataLoaded(`Carregado <b>${paths.unificado}</b> automaticamente.`);
+    return;
+  }catch(e){
+    console.warn("Base unificada não encontrada/indisponível:", e);
+  }
+
+  // 2) Tenta CSV + JSON Asset.
+  let csvOk = false, jsonOk = false, csvMsg = "", jsonMsg = "";
+  try{
+    const csvRaw = await fetchText(paths.csv);
+    csvRows = parseDelimited(csvRaw);
+    csvOk = true;
+    csvMsg = `${csvRows.length} registros`;
+  }catch(e){
+    csvRows = [];
+    csvMsg = e.message;
+  }
+
+  try{
+    assetRows = await fetchJson(paths.asset);
+    jsonOk = Array.isArray(assetRows);
+    jsonMsg = `${assetRows.length} registros`;
+  }catch(e){
+    assetRows = [];
+    jsonMsg = e.message;
+  }
+
+  if(!csvOk && !jsonOk){
+    $("badgeMode").innerHTML = "<strong>Modo:</strong> manual/offline";
+    $("badgeCsv").innerHTML = "<strong>CSV:</strong> não carregado";
+    $("badgeJson").innerHTML = "<strong>JSON:</strong> não carregado";
+    dataRows = [];
+    renderEmpty(`A carga automática falhou. Se você abriu o HTML com duplo clique, use os botões <b>Carregar CSV manual</b> e <b>Carregar JSON Asset manual</b>.<br><br>CSV: ${safe(csvMsg)}<br>JSON: ${safe(jsonMsg)}`);
+    return;
+  }
+
+  dataRows = unifyData(csvRows, assetRows).map((x,i) => ({...x, _idx:i}));
+  afterDataLoaded(`Carga automática concluída. CSV: <b>${safe(csvMsg)}</b> · JSON: <b>${safe(jsonMsg)}</b>`);
+}
+
+function readFileAsText(file){
+  return new Promise((resolve,reject)=>{
+    const reader = new FileReader();
+    reader.onload = e => resolve(e.target.result);
+    reader.onerror = () => reject(reader.error || new Error("Erro ao ler arquivo."));
+    reader.readAsText(file, "utf-8");
+  });
+}
+
+async function loadManualCsv(file){
+  try{
+    const raw = await readFileAsText(file);
+    csvRows = parseDelimited(raw);
+    manualMode = true;
+    dataRows = unifyData(csvRows, assetRows).map((x,i) => ({...x, _idx:i}));
+    afterDataLoaded(`CSV manual carregado: <b>${safe(file.name)}</b> · ${csvRows.length} registros. ${assetRows.length ? "JSON já aplicado." : "Agora carregue o JSON Asset para enriquecer."}`);
+  }catch(e){
+    renderEmpty("Erro ao carregar CSV manual: " + safe(e.message));
+  }
+}
+
+async function loadManualJson(file){
+  try{
+    const raw = await readFileAsText(file);
+    const parsed = JSON.parse(raw);
+    assetRows = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.value) ? parsed.value : []);
+    manualMode = true;
+    dataRows = unifyData(csvRows, assetRows).map((x,i) => ({...x, _idx:i}));
+    afterDataLoaded(`JSON Asset manual carregado: <b>${safe(file.name)}</b> · ${assetRows.length} registros. ${csvRows.length ? "CSV já aplicado." : "Agora carregue o CSV para cruzar performance."}`);
+  }catch(e){
+    renderEmpty("Erro ao carregar JSON manual: " + safe(e.message));
+  }
+}
+
+function clearData(){
+  csvRows = []; assetRows = []; dataRows = []; filteredRows = []; currentPage = 1;
+  $("badgeMode").innerHTML = "<strong>Modo:</strong> aguardando";
+  $("badgeCsv").innerHTML = "<strong>CSV:</strong> aguardando";
+  $("badgeJson").innerHTML = "<strong>JSON:</strong> aguardando";
+  setStatus("Dados limpos. Carregue os arquivos novamente.");
+  updateKpis();
+  renderEmpty("Aguardando dados. Use a carga automática ou os botões manuais.");
+  resetSelects();
+}
+
+/* =======================
+   Unificação
+======================= */
+function buildAssetIndexes(jsonRows){
+  const byCnpj = new Map();
+  const byName = new Map();
+  jsonRows.forEach(item => {
+    const cnpj = digitsOnly(item.nu_cnpj);
+    const names = [
+      item.no_fundo,
+      item.no_razao_social,
+      item.de_pesquisa_index
+    ].map(normalizeText).filter(Boolean);
+    if(cnpj) byCnpj.set(cnpj, item);
+    names.forEach(name => { if(name) byName.set(name, item); });
+  });
+  return {byCnpj, byName};
+}
+
+function findAssetMatch(csvRow, indexes){
+  const cnpjCsv = digitsOnly(csvRow.CNPJ || csvRow.cnpj || csvRow["Nu CNPJ"] || "");
+  if(cnpjCsv && indexes.byCnpj.has(cnpjCsv)){
+    return {extra:indexes.byCnpj.get(cnpjCsv), tipo:"cnpj"};
+  }
+
+  const nomeCsv = normalizeText(csvRow.Fundo_norm || csvRow.Fundo || csvRow.no_fundo || "");
+  if(nomeCsv && indexes.byName.has(nomeCsv)){
+    return {extra:indexes.byName.get(nomeCsv), tipo:"nome_exato"};
+  }
+
+  // Match aproximado por palavras importantes
+  const wordsCsv = new Set(nomeCsv.split(" ").filter(w => w.length >= 3));
+  let best = null, bestScore = 0;
+  if(wordsCsv.size){
+    for(const [name, item] of indexes.byName.entries()){
+      const wordsJson = new Set(name.split(" ").filter(w => w.length >= 3));
+      let inter = 0;
+      wordsCsv.forEach(w => { if(wordsJson.has(w)) inter++; });
+      const score = inter / wordsCsv.size;
+      if(score > bestScore){ bestScore = score; best = item; }
+    }
+  }
+  if(best && bestScore >= 0.62){
+    return {extra:best, tipo:"nome_aproximado_" + bestScore.toFixed(2)};
+  }
+  return {extra:null, tipo:"sem_match"};
+}
+
+function assetToRow(item){
+  return {
+    Categoria: item.no_classificacao_cvm || "",
+    Fundo: item.no_fundo || "",
+    Fundo_norm: normalizeText(item.no_fundo || ""),
+    "Data Inicio": formatDateIso(item.dt_inicial),
+    "Cota (R$)": item.vr_cota_atual ?? "",
+    "Variacao Dia (%)": item.pc_rentabilidade_dia_anterior ?? "",
+    "Acum. Mes (%)": item.pc_rentabilidade_mes_anterior ?? "",
+    "Acum. Ano (%)": item.pc_rentabilidade_ano_anterior ?? "",
+    "Acum. 12M (%)": item.pc_rentabilidade_12m_anterior ?? "",
+    "PL (milhoes R$)": item.vr_pl ? (Number(item.vr_pl)/1_000_000) : "",
+    Perfil: item.co_oferta_siart || "",
+    Perfis: item.co_oferta_siart || "",
+    URL: item.de_link_pagina_fundo || "",
+    _assetOnly: true
+  };
+}
+
+function formatDateIso(v){
+  if(!v) return "";
+  const d = new Date(v);
+  if(Number.isNaN(d.getTime())) return "";
+  return d.toLocaleDateString("pt-BR");
+}
+
+function enrich(row, extra, tipo){
+  return {
+    ...row,
+    match_asset: Boolean(extra),
+    tipo_match_asset: tipo,
+    asset_codigo_siico: extra?.co_siico00 || extra?.co_siico || "",
+    asset_cnpj: extra?.nu_cnpj || "",
+    asset_nome_fundo: extra?.no_fundo || "",
+    asset_razao_social: extra?.no_razao_social || "",
+    perfil_risco: extra?.no_perfil_risco || "",
+    classificacao_cvm: extra?.no_classificacao_cvm || "",
+    estrategia: String(extra?.no_estrategia || "").trim(),
+    benchmark: extra?.no_benchmark || "",
+    classificacao_tributaria: extra?.no_classificacao_tributaria || "",
+    classificacao_investidor: extra?.no_classificacao_investidor || "",
+    aberto_captacao: yesNo(extra?.ic_aberto_captacao),
+    asg: yesNo(extra?.ic_asg),
+    lancamento: yesNo(extra?.ic_lancamento),
+    movimentacao_automatica: yesNo(extra?.ic_mov_automatica),
+    adiantamento_resgate: yesNo(extra?.ic_adiantamento_resgate),
+    taxa_adm_cliente: extra?.pc_taxa_adm_cliente ?? "",
+    taxa_adm_maxima: extra?.pc_taxa_adm_maxima ?? "",
+    aplicacao_inicial: extra?.vr_aplicacao_inicial ?? "",
+    aplicacao_adicional_minima: extra?.vr_aplicacao_adicional_minima ?? "",
+    saldo_minimo: extra?.vr_saldo_minimo ?? "",
+    resgate_minimo: extra?.vr_resgate_minimo ?? "",
+    horario_resgate: extra?.de_horario_resgate || "",
+    horario_limite: extra?.de_horario_limite || "",
+    conversao_aplicacao: extra?.de_conversao_aplicacao || "",
+    conversao_resgate: extra?.de_conversao_resgate || "",
+    pagamento_resgate: extra?.de_pagamento_resgate || "",
+    publico_alvo: extra?.lista_publico_alvo || "",
+    segmento: extra?.lista_segmento || "",
+    destino: extra?.de_destino || "",
+    observacao: extra?.de_observacao_qs || "",
+    link_pagina_fundo: extra?.de_link_pagina_fundo || row.URL || "",
+    link_lamina: extra?.de_link_lamina || "",
+    link_regulamento: extra?.de_link_regulamento || "",
+    link_termo_adesao: extra?.de_link_termo_adesao || "",
+    link_fato_relevante: extra?.de_link_fato_relevante || "",
+    link_info_compl: extra?.de_link_info_compl || "",
+    link_sumario: extra?.de_link_sumario || "",
+    link_due_diligence: extra?.de_due_diligence || "",
+    asset_dt_cota_atual: extra?.dt_cota_atual || "",
+    asset_dt_inicial: extra?.dt_inicial || ""
+  };
+}
+
+function unifyData(csv, json){
+  if(csv.length){
+    const indexes = buildAssetIndexes(json);
+    return csv.map(row => {
+      const {extra, tipo} = findAssetMatch(row, indexes);
+      return enrich(row, extra, tipo);
+    });
+  }
+  // Se só tiver JSON, cria base navegável apenas com Asset.
+  if(json.length){
+    return json.map(item => enrich(assetToRow(item), item, "asset_only"));
+  }
+  return [];
+}
+
+/* =======================
+   Filtros, KPIs e render
+======================= */
+function afterDataLoaded(msg){
+  $("badgeMode").innerHTML = `<strong>Modo:</strong> ${manualMode ? "manual/offline" : "automático"}`;
+  $("badgeCsv").innerHTML = `<strong>CSV:</strong> ${csvRows.length ? csvRows.length + " registros" : "não carregado"}`;
+  $("badgeJson").innerHTML = `<strong>JSON:</strong> ${assetRows.length ? assetRows.length + " registros" : "não carregado"}`;
+  setStatus(msg);
+  currentPage = 1;
+  populateFilters();
+  applyFilters();
+  updateKpis();
+}
+
+function resetSelects(){
+  ["filterRisco","filterCategoria","filterBenchmark"].forEach(id => {
+    const first = $(id).options[0].outerHTML;
+    $(id).innerHTML = first;
+  });
+}
+
+function populateFilters(){
+  fillSelect("filterRisco", dataRows.map(r => r.perfil_risco).filter(Boolean));
+  fillSelect("filterCategoria", dataRows.map(r => r.Categoria || r.classificacao_cvm).filter(Boolean));
+  fillSelect("filterBenchmark", dataRows.map(r => r.benchmark).filter(Boolean));
+}
+
+function fillSelect(id, values){
+  const select = $(id);
+  const current = select.value;
+  const first = select.options[0].outerHTML;
+  const unique = [...new Set(values.map(v => String(v).trim()).filter(Boolean))]
+    .sort((a,b)=>a.localeCompare(b,"pt-BR"));
+  select.innerHTML = first;
+  unique.forEach(v => {
+    const opt = document.createElement("option");
+    opt.value = v; opt.textContent = v;
+    select.appendChild(opt);
+  });
+  if(unique.includes(current)) select.value = current;
+}
+
+function applyFilters(){
+  const q = normalizeText($("search").value);
+  const perfil = $("filterPerfil").value;
+  const risco = $("filterRisco").value;
+  const categoria = $("filterCategoria").value;
+  const benchmark = $("filterBenchmark").value;
+  const captacao = $("filterCaptacao").value;
+  const liquidez = $("filterLiquidez").value;
+
+  filteredRows = dataRows.filter(r => {
+    const text = normalizeText(Object.values(r).join(" "));
+    if(q && !text.includes(q)) return false;
+    if(perfil && !String(r.Perfis || r.Perfil || r.co_oferta_siart || "").includes(perfil)) return false;
+    if(risco && r.perfil_risco !== risco) return false;
+    if(categoria && (r.Categoria || r.classificacao_cvm) !== categoria) return false;
+    if(benchmark && r.benchmark !== benchmark) return false;
+    if(captacao && r.aberto_captacao !== captacao) return false;
+    if(liquidez){
+      const liq = normalizeLiquidity((r.pagamento_resgate || "") + " " + (r.conversao_resgate || ""));
+      if(!liq.includes(normalizeLiquidity(liquidez))) return false;
+    }
+    return true;
+  });
+
+  sortRows();
+  updateKpis();
+  renderTable();
+}
+
+function sortRows(){
+  filteredRows.sort((a,b)=>{
+    let an = toNumber(a[sortKey]);
+    let bn = toNumber(b[sortKey]);
+    if(sortKey === "match_asset"){ an = a.match_asset ? 1 : 0; bn = b.match_asset ? 1 : 0; }
+    if(an !== null || bn !== null){
+      return ((an ?? -Infinity) - (bn ?? -Infinity)) * sortDir;
+    }
+    return String(a[sortKey] ?? "").localeCompare(String(b[sortKey] ?? ""), "pt-BR") * sortDir;
+  });
+}
+
+function updateKpis(){
+  const base = filteredRows.length ? filteredRows : dataRows;
+  const total = base.length;
+  const match = base.filter(r => r.match_asset).length;
+  const open = base.filter(r => r.aberto_captacao === "Sim").length;
+  let pl = 0, best = null, worst = null;
+  base.forEach(r => {
+    const p = toNumber(r["PL (milhoes R$)"]);
+    if(p !== null) pl += p;
+    const r12 = toNumber(r["Acum. 12M (%)"]);
+    if(r12 !== null){
+      if(!best || r12 > best.val) best = {val:r12, name:r.Fundo || r.asset_nome_fundo};
+      if(!worst || r12 < worst.val) worst = {val:r12, name:r.Fundo || r.asset_nome_fundo};
+    }
+  });
+  $("kpiTotal").textContent = total || "—";
+  $("kpiMatch").textContent = total ? `${match}/${total}` : "—";
+  $("kpiOpen").textContent = open || "—";
+  $("kpiPL").textContent = pl ? pl.toLocaleString("pt-BR",{maximumFractionDigits:0}) : "—";
+  $("kpiBest").textContent = best ? "+" + best.val.toLocaleString("pt-BR",{maximumFractionDigits:2}) + "%" : "—";
+  $("kpiBestName").textContent = best?.name || "—";
+  $("kpiWorst").textContent = worst ? worst.val.toLocaleString("pt-BR",{maximumFractionDigits:2}) + "%" : "—";
+  $("kpiWorstName").textContent = worst?.name || "—";
+}
+
+function renderEmpty(msg){
+  $("tbody").innerHTML = `<tr><td colspan="15" class="muted">${msg}</td></tr>`;
+  $("resultInfo").innerHTML = "0 registros";
+  $("pageInfo").innerHTML = "Página 1";
+}
+
+function renderTable(){
+  if(!filteredRows.length){
+    renderEmpty(dataRows.length ? "Nenhum fundo encontrado com os filtros atuais." : "Aguardando dados. Use a carga automática ou os botões manuais.");
+    return;
+  }
+  const perPage = Number($("perPage").value);
+  const totalPages = Math.max(1, Math.ceil(filteredRows.length / perPage));
+  if(currentPage > totalPages) currentPage = totalPages;
+  const start = (currentPage - 1) * perPage;
+  const pageRows = filteredRows.slice(start, start + perPage);
+  $("tbody").innerHTML = pageRows.map(r => rowHtml(r)).join("");
+  $("resultInfo").innerHTML = `Exibindo ${start+1}–${Math.min(start+perPage, filteredRows.length)} de ${filteredRows.length} registros`;
+  $("pageInfo").innerHTML = `Página ${currentPage} de ${totalPages}`;
+}
+
+function rowHtml(r){
+  const cap = r.aberto_captacao || "—";
+  const capClass = cap === "Sim" ? "open" : cap === "Não" ? "closed" : "";
+  const liq = r.pagamento_resgate || r.conversao_resgate || "—";
+  const fundo = r.Fundo || r.asset_nome_fundo || "—";
+  const categoria = r.Categoria || r.classificacao_cvm || "—";
+  const matchChip = r.match_asset ? `<span class="source-chip">Asset</span>` : `<span class="source-chip no">sem match</span>`;
+  const tax = toNumber(r.taxa_adm_cliente);
+  return `
+    <tr>
+      <td class="fundo">${safe(fundo)}<span class="mini">${safe(r.asset_cnpj || r.asset_codigo_siico || r.tipo_match_asset || "")}</span></td>
+      <td>${safe(categoria)}</td>
+      <td><span class="pill">${safe(r.perfil_risco || "—")}</span></td>
+      <td>${safe(r.benchmark || "—")}</td>
+      <td>${tax !== null ? tax.toLocaleString("pt-BR",{maximumFractionDigits:2}) + "%" : "—"}</td>
+      <td>${fmtCurrency(r.aplicacao_inicial)}</td>
+      <td>${safe(liq)}</td>
+      <td><span class="pill ${capClass}">${safe(cap)}</span></td>
+      <td>${fmtPct(r["Variacao Dia (%)"])}</td>
+      <td>${fmtPct(r["Acum. Mes (%)"])}</td>
+      <td>${fmtPct(r["Acum. Ano (%)"])}</td>
+      <td>${fmtPct(r["Acum. 12M (%)"])}</td>
+      <td>${fmtNumber(r["PL (milhoes R$)"],3)}</td>
+      <td>${matchChip}</td>
+      <td><button class="btn-small" onclick="openDetails(${r._idx})">Ver</button></td>
+    </tr>`;
+}
+
+/* =======================
+   Drawer detalhes
+======================= */
+function rowDetail(label, value){
+  return `<div class="row"><span>${safe(label)}</span><strong>${value ? safe(value) : "—"}</strong></div>`;
+}
+
+function linkButtons(r){
+  const links = [
+    ["Página", r.link_pagina_fundo || r.URL],
+    ["Lâmina", r.link_lamina],
+    ["Regulamento", r.link_regulamento],
+    ["Termo", r.link_termo_adesao],
+    ["Fato relevante", r.link_fato_relevante],
+    ["Info. complementar", r.link_info_compl],
+    ["Sumário", r.link_sumario],
+    ["Due diligence", r.link_due_diligence]
+  ].filter(([_,u]) => !isUnavailableLink(u));
+
+  if(!links.length) return `<span class="muted">Nenhum link disponível.</span>`;
+  return links.map(([label,url]) => `<a href="${safe(url)}" target="_blank" rel="noopener">${safe(label)}</a>`).join("");
+}
+
+function openDetails(idx){
+  const r = dataRows.find(x => x._idx === idx);
+  if(!r) return;
+  $("drawerTitle").textContent = r.Fundo || r.asset_nome_fundo || "Detalhes do fundo";
+  $("drawerSub").textContent = `Match Asset: ${r.match_asset ? "Sim" : "Não"} · Tipo: ${r.tipo_match_asset || "—"}`;
+
+  const sourceWarn = r.match_asset ? "" : `<div class="warn">Este fundo não encontrou correspondência no JSON Asset. A linha está usando principalmente os dados do CSV do robô.</div>`;
+
+  $("drawerContent").innerHTML = `
+    ${sourceWarn}
+    <div class="section"><h3>Identificação</h3>
+      ${rowDetail("Código SIICO", r.asset_codigo_siico)}
+      ${rowDetail("CNPJ", r.asset_cnpj)}
+      ${rowDetail("Nome Asset", r.asset_nome_fundo)}
+      ${rowDetail("Razão social", r.asset_razao_social)}
+      ${rowDetail("Data início CSV", r["Data Inicio"])}
+      ${rowDetail("Data cota Asset", r.asset_dt_cota_atual ? formatDateIso(r.asset_dt_cota_atual) : "")}
+    </div>
+    <div class="section"><h3>Classificação</h3>
+      ${rowDetail("Categoria", r.Categoria || r.classificacao_cvm)}
+      ${rowDetail("Perfil de risco", r.perfil_risco)}
+      ${rowDetail("Benchmark", r.benchmark)}
+      ${rowDetail("Estratégia", r.estrategia)}
+      ${rowDetail("Tributação", r.classificacao_tributaria)}
+      ${rowDetail("Investidor", r.classificacao_investidor)}
+    </div>
+    <div class="section"><h3>Aplicação e resgate</h3>
+      ${rowDetail("Taxa adm. cliente", toNumber(r.taxa_adm_cliente) !== null ? toNumber(r.taxa_adm_cliente).toLocaleString("pt-BR",{maximumFractionDigits:2}) + "%" : "")}
+      ${rowDetail("Taxa adm. máxima", toNumber(r.taxa_adm_maxima) !== null ? toNumber(r.taxa_adm_maxima).toLocaleString("pt-BR",{maximumFractionDigits:2}) + "%" : "")}
+      ${rowDetail("Aplicação inicial", fmtCurrency(r.aplicacao_inicial))}
+      ${rowDetail("Aplicação adicional", fmtCurrency(r.aplicacao_adicional_minima))}
+      ${rowDetail("Saldo mínimo", fmtCurrency(r.saldo_minimo))}
+      ${rowDetail("Resgate mínimo", fmtCurrency(r.resgate_minimo))}
+      ${rowDetail("Conversão aplicação", r.conversao_aplicacao)}
+      ${rowDetail("Conversão resgate", r.conversao_resgate)}
+      ${rowDetail("Pagamento resgate", r.pagamento_resgate)}
+      ${rowDetail("Horário limite", r.horario_limite || r.horario_resgate)}
+    </div>
+    <div class="section"><h3>Comercial</h3>
+      ${rowDetail("Aberto para captação", r.aberto_captacao)}
+      ${rowDetail("ASG", r.asg)}
+      ${rowDetail("Lançamento", r.lancamento)}
+      ${rowDetail("Movimentação automática", r.movimentacao_automatica)}
+      ${rowDetail("Adiantamento resgate", r.adiantamento_resgate)}
+      ${rowDetail("Público-alvo", r.publico_alvo)}
+      ${rowDetail("Segmento", r.segmento)}
+      ${rowDetail("Destino", r.destino)}
+    </div>
+    <div class="section"><h3>Performance preferencial CSV/SIPII</h3>
+      ${rowDetail("Cota", r["Cota (R$)"])}
+      ${rowDetail("Variação dia", r["Variacao Dia (%)"] ? r["Variacao Dia (%)"] + "%" : "")}
+      ${rowDetail("Acum. mês", r["Acum. Mes (%)"] ? r["Acum. Mes (%)"] + "%" : "")}
+      ${rowDetail("Acum. ano", r["Acum. Ano (%)"] ? r["Acum. Ano (%)"] + "%" : "")}
+      ${rowDetail("Acum. 12M", r["Acum. 12M (%)"] ? r["Acum. 12M (%)"] + "%" : "")}
+      ${rowDetail("PL milhões R$", r["PL (milhoes R$)"])}
+    </div>
+    <div class="section"><h3>Links oficiais</h3><div class="links">${linkButtons(r)}</div></div>
+    ${r.observacao ? `<div class="section"><h3>Observações Asset</h3><div class="muted" style="line-height:1.55;font-size:.8rem">${safe(r.observacao).replace(/\n/g,"<br>")}</div></div>` : ""}
+  `;
+
+  $("drawer").classList.add("open");
+  $("drawerBackdrop").classList.add("open");
+}
+
+function closeDrawer(){
+  $("drawer").classList.remove("open");
+  $("drawerBackdrop").classList.remove("open");
+}
+
+/* =======================
+   Eventos
+======================= */
+document.querySelectorAll("th[data-sort]").forEach(th => {
+  th.addEventListener("click", () => {
+    const key = th.dataset.sort;
+    if(sortKey === key) sortDir *= -1;
+    else { sortKey = key; sortDir = -1; }
+    applyFilters();
+  });
+});
+
+["search","filterPerfil","filterRisco","filterCategoria","filterBenchmark","filterCaptacao","filterLiquidez","perPage"].forEach(id => {
+  $(id).addEventListener("input", () => { currentPage = 1; applyFilters(); });
+  $(id).addEventListener("change", () => { currentPage = 1; applyFilters(); });
+});
+
+$("btnCsv").addEventListener("click", () => $("fileCsv").click());
+$("btnJson").addEventListener("click", () => $("fileJson").click());
+$("btnAuto").addEventListener("click", autoLoad);
+$("btnClear").addEventListener("click", clearData);
+$("btnResetFilters").addEventListener("click", () => {
+  ["search","filterPerfil","filterRisco","filterCategoria","filterBenchmark","filterCaptacao","filterLiquidez"].forEach(id => $(id).value = "");
+  currentPage = 1; applyFilters();
+});
+$("fileCsv").addEventListener("change", e => e.target.files[0] && loadManualCsv(e.target.files[0]));
+$("fileJson").addEventListener("change", e => e.target.files[0] && loadManualJson(e.target.files[0]));
+$("prevPage").addEventListener("click", () => { if(currentPage > 1){ currentPage--; renderTable(); } });
+$("nextPage").addEventListener("click", () => {
+  const totalPages = Math.max(1, Math.ceil(filteredRows.length / Number($("perPage").value)));
+  if(currentPage < totalPages){ currentPage++; renderTable(); }
+});
+$("closeDrawer").addEventListener("click", closeDrawer);
+$("drawerBackdrop").addEventListener("click", closeDrawer);
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeDrawer(); });
+
+// Tenta carregar ao abrir. Se estiver em file:// e falhar, fica pronto para upload manual.
+autoLoad();
+</script>
+</body>
+</html>
