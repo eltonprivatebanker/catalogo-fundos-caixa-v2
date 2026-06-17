@@ -2257,3 +2257,97 @@ Stacktrace:
 [17:35:47] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [17:35:47] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20260616.json
 [17:35:47] SUCESSO: 171 fundos consolidados e enriquecidos salvos.
+[16:10:45] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[16:10:45] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[16:10:48]   [CAIXA] renda-fixa → +34 links (34 total)
+[16:10:49]   [CAIXA] referenciados → +4 links (38 total)
+[16:10:51]   [CAIXA] fundo-simples → +2 links (40 total)
+[16:10:52]   [CAIXA] curto-prazo → +1 links (41 total)
+[16:10:54]   [CAIXA] multimercado → +19 links (60 total)
+[16:10:56]   [CAIXA] cambiais → +1 links (61 total)
+[16:10:58]   [CAIXA] fundos-de-acoes → +10 links (71 total)
+[16:10:59]   [CAIXA] fundos-de-indices → +2 links (73 total)
+[16:11:01]   [CAIXA] renda-fixa → +8 links (81 total)
+[16:11:02]   [CAIXA] empresa → +5 links (86 total)
+[16:11:03]   [CAIXA] fmp-fgts → HTTP 404
+[16:11:04]   [CAIXA] rpps → +8 links (94 total)
+[16:11:05] [CAIXA] Total URLs dinâmicas: 94
+[16:11:05] ETAPA 2 — Coletando dados do SIPII...
+[16:11:07] [PF] Abrindo SIPII...
+[16:11:28]   [PF] RENDA FIXA SIMPLES: 3 fundos.
+[16:11:43]   [PF] RENDA FIXA: 39 fundos.
+[16:11:50]   [PF] RENDA FIXA REFERENCIADO: 10 fundos.
+[16:11:53]   [PF] RENDA FIXA CURTO PRAZO: 1 fundos.
+[16:12:06]   [PF] MULTIMERCADO: 30 fundos.
+[16:12:10]   [PF] CAMBIAL: 1 fundos.
+[16:12:23]   [PF] ACOES: 29 fundos.
+[16:12:26]   [PF] FUNDO DE INDICE: 1 fundos.
+[16:12:32]   [PF] FUNDOS MUTUOS DE PRIVATIZACAO: 9 fundos.
+[16:12:32] [PJ] Abrindo SIPII...
+[16:12:52]   [PJ] RENDA FIXA SIMPLES: 5 fundos.
+[16:13:07]   [PJ] RENDA FIXA: 38 fundos.
+[16:13:12]   [PJ] RENDA FIXA REFERENCIADO: 7 fundos.
+[16:13:16]   [PJ] RENDA FIXA CURTO PRAZO: 2 fundos.
+[16:13:28]   [PJ] MULTIMERCADO: 27 fundos.
+[16:13:32]   [PJ] CAMBIAL: 1 fundos.
+[16:13:43]   [PJ] ACOES: 28 fundos.
+[16:13:44] [GOV] Abrindo SIPII...
+[16:14:04]   [GOV] RENDA FIXA: 2 fundos.
+[16:14:07]   [GOV] RENDA FIXA REFERENCIADO: 3 fundos.
+[16:14:11]   [GOV] RENDA FIXA CURTO PRAZO: 3 fundos.
+[16:14:16]   [GOV] MULTIMERCADO: 6 fundos.
+[16:14:19]   [GOV] ACOES: 4 fundos.
+[16:14:20] [RPPS] Abrindo SIPII...
+[16:14:50]   [RPPS] RENDA FIXA: 19 fundos.
+[16:14:55]   [RPPS] RENDA FIXA REFERENCIADO: 4 fundos.
+[16:15:02]   [RPPS] MULTIMERCADO: 14 fundos.
+[16:15:09]   [RPPS] ACOES: 14 fundos.
+[16:15:09] [TODOS] Abrindo SIPII...
+[16:15:28]   [TODOS] RENDA FIXA SIMPLES: 2 fundos.
+[16:15:45]   [TODOS] RENDA FIXA: 42 fundos.
+[16:15:50]   [TODOS] RENDA FIXA REFERENCIADO: 8 fundos.
+[16:15:54]   [TODOS] RENDA FIXA CURTO PRAZO: 3 fundos.
+[16:16:01]   [TODOS] MULTIMERCADO: 14 fundos.
+[16:16:04]   [TODOS] CAMBIAL: 1 fundos.
+[16:16:15]   [TODOS] ACOES: 25 fundos.
+[16:16:19]   [TODOS] FUNDO DE INDICE: 1 fundos.
+[16:16:19] ETAPA 3 — Associando URLs (estáticas + dinâmicas)...
+[16:16:19]   Dicionário estático : 116 entradas
+[16:16:19]   URLs encontradas    : 148/171
+[16:16:19]   Sem URL             : 23/171
+[16:16:19]   Fundos SEM URL:
+[16:16:19]     - CAIXA FIC FIF EXCLUSIVO FUNC RF CREDITO PRIVADO LP RESP LTDA
+[16:16:19]     - CAIXA EXPERT VOX DESENV SUSTENTAVEL IS RF CRED PRIV LP - RESP LTDA (2)
+[16:16:19]     - CAIXA EXPERT ABSOLUTE CRETA FIC FIF RF CRED PRIV LP - RESP LTDA
+[16:16:19]     - CAIXA EXPERT VINLAND DEB IN INFRA RF CRED PRIV LP RESP LTDA (2) (3)
+[16:16:19]     - CAIXA SIGMA FUNCIONARIOS FIC FIF RF REF DI LP - RESP LTDA (2) (3)
+[16:16:19]     - CAIXA CARTEIRA QUANT DUO FIC FIF MM LP RESP LTDA (2) (3)
+[16:16:19]     - CAIXA CARTEIRA QUANT QUALI FIC FIF MM LP RESP LTDA (2) (3)
+[16:16:19]     - CAIXA CARTEIRA QUANT UNO FIC FIF MM LP RESP LTDA (2) (3)
+[16:16:19]     - CAIXA FIC FIF FUNCIONARIOS ESTRATEGIA LIVRE MULTIMERCADO LP RESP LTDA
+[16:16:19]     - CAIXA HASHDEX NASDAQ CRYPTO INDEX FIC FIF MM RESP LTDA (2)
+[16:16:19]     - CAIXA FIC FIM CAPITAL PROTEGIDO CICLICO II LP - RL
+[16:16:19]     - CAIXA ATENA FIC FIF AÇÕES FUNCIONÁRIOS LIVRE QUANT RESP LTDA
+[16:16:19]     - CAIXA ATENA FIC FIF AÇÕES LIVRE QUANT RESP LTDA
+[16:16:19]     - CAIXA FMP-FGTS ELETROBRAS MIGRACAO
+[16:16:19]     - CAIXA FMP-FGTS ELETROBRAS RESP LTDA
+[16:16:19]     - CAIXA FMP-FGTS PETROBRÁS IV RESP LTDA
+[16:16:19]     - CAIXA FMP-FGTS VALE RIO DOCE II RESP LTDA
+[16:16:19]     - CAIXA FMP-FGTS CL ABSOLUTO RESP LTDA
+[16:16:19]     - CAIXA FMP-FGTS VALE RIO DOCE MIGRAÇÃO RESP LTDA
+[16:16:19]     - CAIXA FMP-FGTS PETROBRÁS II RESP LTDA
+[16:16:19]     - CAIXA FMP-FGTS VALE RIO DOCE I RESP LTDA
+[16:16:19]     - CAIXA FMP-FGTS PETROBRÁS III RESP LTDA
+[16:16:19]     - CAIXA ATENA FIC FIF AÇÕES BRASIL LIVRE QUANT RESP LTDA
+[16:16:19] ETAPA 4 — Baixando JSON da CAIXA Asset...
+[16:16:22]   JSON Asset salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_asset.json
+[16:16:22]   Histórico JSON salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_asset_20260617.json
+[16:16:22]   Fundos no JSON Asset: 196
+[16:16:22]   Asset matches encontrados: 168/171
+[16:16:22]   Asset sem match: 3/171
+[16:16:22] CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/dados_atuais.csv
+[16:16:22] Histórico CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20260617.csv
+[16:16:23] Excel salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20260617.xlsx
+[16:16:23] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
+[16:16:23] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20260617.json
+[16:16:23] SUCESSO: 171 fundos consolidados e enriquecidos salvos.
