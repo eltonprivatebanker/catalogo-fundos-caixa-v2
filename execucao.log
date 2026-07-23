@@ -4085,3 +4085,35 @@ Stacktrace:
 [14:38:26] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [14:38:26] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20260722.json
 [14:38:26] SUCESSO: 171 fundos consolidados e enriquecidos salvos.
+[14:40:00] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[14:40:00] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[14:40:05]   [CAIXA] renda-fixa → +34 links (34 total)
+[14:40:07]   [CAIXA] referenciados → +4 links (38 total)
+[14:40:08]   [CAIXA] fundo-simples → +2 links (40 total)
+[14:40:10]   [CAIXA] curto-prazo → +1 links (41 total)
+[14:40:12]   [CAIXA] multimercado → +19 links (60 total)
+[14:40:14]   [CAIXA] cambiais → +1 links (61 total)
+[14:40:16]   [CAIXA] fundos-de-acoes → +11 links (72 total)
+[14:40:17]   [CAIXA] fundos-de-indices → +2 links (74 total)
+[14:40:19]   [CAIXA] renda-fixa → +8 links (82 total)
+[14:40:20]   [CAIXA] empresa → +5 links (87 total)
+[14:40:22]   [CAIXA] fmp-fgts → HTTP 404
+[14:40:22]   [CAIXA] rpps → +8 links (95 total)
+[14:40:23] [CAIXA] Total URLs dinâmicas: 95
+[14:40:23] ETAPA 2 — Coletando dados do SIPII...
+[14:40:29] [PF] Abrindo SIPII...
+[14:40:33] [PF] Erro geral: Message: Link não encontrado: PESSOA FÍSICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[14:40:34] [PJ] Abrindo SIPII...
+[14:40:37] [PJ] Erro geral: Message: Link não encontrado: PESSOA JURÍDICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[14:40:37] [GOV] Abrindo SIPII...
+[14:40:41] [GOV] Erro geral: Message: Link não encontrado: GOVERNO; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[14:40:41] [RPPS] Abrindo SIPII...
+[14:40:45] [RPPS] Erro geral: Message: Link não encontrado: RPPS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[14:40:45] [TODOS] Abrindo SIPII...
+[14:40:49] [TODOS] Erro geral: Message: Link não encontrado: TODOS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[14:40:49] ATENÇÃO: Nenhum dado coletado.
