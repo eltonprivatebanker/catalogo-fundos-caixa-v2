@@ -4526,3 +4526,30 @@ Stacktrace:
 [14:45:32] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [14:45:32] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20260730.json
 [14:45:32] SUCESSO: 172 fundos consolidados e enriquecidos salvos.
+[14:56:09] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[14:56:09] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[14:56:11]   [CAIXA] renda-fixa → +34 links (34 total)
+[14:56:12]   [CAIXA] referenciados → +4 links (38 total)
+[14:56:14]   [CAIXA] fundo-simples → +2 links (40 total)
+[14:56:15]   [CAIXA] curto-prazo → +1 links (41 total)
+[14:56:17]   [CAIXA] multimercado → +19 links (60 total)
+[14:56:19]   [CAIXA] cambiais → +1 links (61 total)
+[14:56:20]   [CAIXA] fundos-de-acoes → +12 links (73 total)
+[14:56:22]   [CAIXA] fundos-de-indices → +2 links (75 total)
+[14:56:23]   [CAIXA] renda-fixa → +8 links (83 total)
+[14:56:25]   [CAIXA] empresa → +5 links (88 total)
+[14:56:26]   [CAIXA] fmp-fgts → HTTP 404
+[14:56:27]   [CAIXA] rpps → +8 links (96 total)
+[14:56:28] [CAIXA] Total URLs dinâmicas: 96
+[14:56:28] ETAPA 2 — Coletando dados do SIPII...
+[14:56:29] [PF] Abrindo SIPII...
+[14:58:29] [PF] Erro geral: HTTPConnectionPool(host='localhost', port=36697): Read timed out. (read timeout=120)
+[14:58:40] [PJ] Abrindo SIPII...
+[15:00:40] [PJ] Erro geral: HTTPConnectionPool(host='localhost', port=55139): Read timed out. (read timeout=120)
+[15:00:53] [GOV] Abrindo SIPII...
+[15:02:53] [GOV] Erro geral: HTTPConnectionPool(host='localhost', port=34321): Read timed out. (read timeout=120)
+[15:05:54] [RPPS] Abrindo SIPII...
+[15:07:54] [RPPS] Erro geral: HTTPConnectionPool(host='localhost', port=39247): Read timed out. (read timeout=120)
+[15:08:06] [TODOS] Abrindo SIPII...
+[15:10:06] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=41233): Read timed out. (read timeout=120)
+[15:10:18] ATENÇÃO: Nenhum dado coletado.
