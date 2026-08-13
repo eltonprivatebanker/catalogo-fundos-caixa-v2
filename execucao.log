@@ -5042,3 +5042,74 @@ Stacktrace:
 [14:06:31] [TODOS] Abrindo SIPII...
 [14:08:31] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=37225): Read timed out. (read timeout=120)
 [14:08:44] ATENÇÃO: Nenhum dado coletado.
+[13:54:37] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[13:54:37] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[13:54:39]   [CAIXA] renda-fixa → +35 links (35 total)
+[13:54:40]   [CAIXA] referenciados → +4 links (39 total)
+[13:54:42]   [CAIXA] fundo-simples → +2 links (41 total)
+[13:54:44]   [CAIXA] curto-prazo → +1 links (42 total)
+[13:54:45]   [CAIXA] multimercado → +19 links (61 total)
+[13:54:47]   [CAIXA] cambiais → +1 links (62 total)
+[13:54:49]   [CAIXA] fundos-de-acoes → +12 links (74 total)
+[13:54:50]   [CAIXA] fundos-de-indices → +2 links (76 total)
+[13:54:52]   [CAIXA] renda-fixa → +8 links (84 total)
+[13:54:53]   [CAIXA] empresa → +5 links (89 total)
+[13:54:54]   [CAIXA] fmp-fgts → HTTP 404
+[13:54:55]   [CAIXA] rpps → +8 links (97 total)
+[13:54:56] [CAIXA] Total URLs dinâmicas: 97
+[13:54:56] ETAPA 2 — Coletando dados do SIPII...
+[13:55:01] [PF] Abrindo SIPII...
+[13:56:54] [PJ] Abrindo SIPII...
+[13:58:53]   [PJ] RENDA FIXA SIMPLES: 5 fundos.
+[14:01:14]   [PJ] Sessão perdida em 'RENDA FIXA'. Reiniciando...
+[14:01:14] [PJ] Abrindo SIPII...
+[14:06:57]   [PJ] Falha ao recuperar 'RENDA FIXA': HTTPConnectionPool(host='localhost', port=35859): Read timed out. (read timeout=120)
+[14:08:57]   [PJ] Erro em 'RENDA FIXA REFERENCIADO': HTTPConnectionPool(host='localhost', port=35859): Read timed out. (read timeout=120)
+[14:10:57]   [PJ] Erro em 'RENDA FIXA CURTO PRAZO': HTTPConnectionPool(host='localhost', port=35859): Read timed out. (read timeout=120)
+[14:16:58]   [PJ] Erro em 'MULTIMERCADO': HTTPConnectionPool(host='localhost', port=35859): Read timed out. (read timeout=120)
+[14:18:52]   [PJ] Sessão perdida em 'CAMBIAL'. Reiniciando...
+[14:18:52] [PJ] Abrindo SIPII...
+[14:19:11]   [PJ] CAMBIAL (recuperado): 1 fundos.
+[14:19:23]   [PJ] ACOES: 28 fundos.
+[14:19:23] [GOV] Abrindo SIPII...
+[14:19:40]   [GOV] RENDA FIXA: 2 fundos.
+[14:19:43]   [GOV] RENDA FIXA REFERENCIADO: 3 fundos.
+[14:19:47]   [GOV] RENDA FIXA CURTO PRAZO: 3 fundos.
+[14:19:52]   [GOV] MULTIMERCADO: 6 fundos.
+[14:19:56]   [GOV] ACOES: 4 fundos.
+[14:19:56] [RPPS] Abrindo SIPII...
+[14:20:26]   [RPPS] RENDA FIXA: 19 fundos.
+[14:20:31]   [RPPS] RENDA FIXA REFERENCIADO: 5 fundos.
+[14:20:38]   [RPPS] MULTIMERCADO: 14 fundos.
+[14:20:46]   [RPPS] ACOES: 14 fundos.
+[14:20:46] [TODOS] Abrindo SIPII...
+[14:21:04]   [TODOS] RENDA FIXA SIMPLES: 2 fundos.
+[14:21:20]   [TODOS] RENDA FIXA: 42 fundos.
+[14:21:25]   [TODOS] RENDA FIXA REFERENCIADO: 8 fundos.
+[14:21:29]   [TODOS] RENDA FIXA CURTO PRAZO: 3 fundos.
+[14:21:36]   [TODOS] MULTIMERCADO: 14 fundos.
+[14:21:39]   [TODOS] CAMBIAL: 1 fundos.
+[14:21:50]   [TODOS] ACOES: 25 fundos.
+[14:21:54]   [TODOS] FUNDO DE INDICE: 1 fundos.
+[14:21:54] ETAPA 3 — Associando URLs (estáticas + dinâmicas)...
+[14:21:54]   Dicionário estático : 116 entradas
+[14:21:54]   URLs encontradas    : 120/125
+[14:21:54]   Sem URL             : 5/125
+[14:21:54]   Fundos SEM URL:
+[14:21:54]     - CAIXA ATENA FIC FIF AÇÕES LIVRE QUANT RESP LTDA
+[14:21:54]     - CAIXA FIC FIM CAPITAL PROTEGIDO CICLICO II LP - RL (1)
+[14:21:54]     - CAIXA EXPERT ABSOLUTE CRETA FIC FIF RF CRED PRIV LP - RESP LTDA (1)
+[14:21:54]     - CAIXA BRASIL ESMERALDA FIC FIF RF REF DI CRED PRIV LONGO PRAZO RESP LTDA (2
+[14:21:54]     - CAIXA ATENA FIC FIF AÇÕES BRASIL LIVRE QUANT RESP LTDA
+[14:21:54] ETAPA 4 — Baixando JSON da CAIXA Asset...
+[14:21:56]   JSON Asset salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_asset.json
+[14:21:56]   Histórico JSON salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_asset_20260813.json
+[14:21:56]   Fundos no JSON Asset: 199
+[14:21:56]   Asset matches encontrados: 122/125
+[14:21:56]   Asset sem match: 3/125
+[14:21:56] CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/dados_atuais.csv
+[14:21:56] Histórico CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20260813.csv
+[14:21:57] Excel salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20260813.xlsx
+[14:21:57] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
+[14:21:57] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20260813.json
+[14:21:57] SUCESSO: 125 fundos consolidados e enriquecidos salvos.
