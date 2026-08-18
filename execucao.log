@@ -5235,3 +5235,144 @@ Stacktrace:
 [13:21:15] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [13:21:15] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20260817.json
 [13:21:15] SUCESSO: 174 fundos consolidados e enriquecidos salvos.
+[13:22:04] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[13:22:04] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[13:22:06]   [CAIXA] renda-fixa → +35 links (35 total)
+[13:22:07]   [CAIXA] referenciados → +4 links (39 total)
+[13:22:09]   [CAIXA] fundo-simples → +2 links (41 total)
+[13:22:11]   [CAIXA] curto-prazo → +1 links (42 total)
+[13:22:12]   [CAIXA] multimercado → +19 links (61 total)
+[13:22:14]   [CAIXA] cambiais → +1 links (62 total)
+[13:22:16]   [CAIXA] fundos-de-acoes → +12 links (74 total)
+[13:22:17]   [CAIXA] fundos-de-indices → +2 links (76 total)
+[13:22:18]   [CAIXA] renda-fixa → +8 links (84 total)
+[13:22:20]   [CAIXA] empresa → +5 links (89 total)
+[13:22:21]   [CAIXA] fmp-fgts → HTTP 404
+[13:22:22]   [CAIXA] rpps → +8 links (97 total)
+[13:22:23] [CAIXA] Total URLs dinâmicas: 97
+[13:22:23] ETAPA 2 — Coletando dados do SIPII...
+[13:22:24] [PF] Abrindo SIPII...
+[13:24:07]   [PF] RENDA FIXA SIMPLES: 3 fundos.
+[13:26:19]   [PF] RENDA FIXA: 40 fundos.
+[13:27:08]   [PF] RENDA FIXA REFERENCIADO: 10 fundos.
+[13:27:26]   [PF] RENDA FIXA CURTO PRAZO: 1 fundos.
+[13:31:27]   [PF] Erro em 'MULTIMERCADO': HTTPConnectionPool(host='localhost', port=42921): Read timed out. (read timeout=120)
+[13:36:28]   [PF] Erro em 'CAMBIAL': HTTPConnectionPool(host='localhost', port=42921): Read timed out. (read timeout=120)
+[13:38:28]   [PF] Erro em 'ACOES': HTTPConnectionPool(host='localhost', port=42921): Read timed out. (read timeout=120)
+[13:40:28]   [PF] Erro em 'FUNDO DE INDICE': HTTPConnectionPool(host='localhost', port=42921): Read timed out. (read timeout=120)
+[13:44:59]   [PF] Sessão perdida em 'FUNDOS MUTUOS DE PRIVATIZACAO'. Reiniciando...
+[13:45:00] [PF] Abrindo SIPII...
+[13:45:37]   [PF] Falha ao recuperar 'FUNDOS MUTUOS DE PRIVATIZACAO': Message: stale element reference: stale element not found
+  (Session info: chrome=151.0.7922.108); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+#0 0x55b3ce08882a <unknown>
+#1 0x55b3cd9fbfc9 <unknown>
+#2 0x55b3cda1109b <unknown>
+#3 0x55b3cda0fb31 <unknown>
+#4 0x55b3cda03bd1 <unknown>
+#5 0x55b3cda03d0e <unknown>
+#6 0x55b3cda01d89 <unknown>
+#7 0x55b3cda05d68 <unknown>
+#8 0x55b3cda9b2a1 <unknown>
+#9 0x55b3cda9a1a3 <unknown>
+#10 0x55b3cda44d32 <unknown>
+#11 0x55b3cda45bb1 <unknown>
+#12 0x55b3ce04dbb0 <unknown>
+#13 0x55b3ce04c22a <unknown>
+#14 0x55b3ce036c55 <unknown>
+#15 0x55b3ce04ceea <unknown>
+#16 0x55b3ce01eb50 <unknown>
+#17 0x55b3ce074208 <unknown>
+#18 0x55b3ce0743a5 <unknown>
+#19 0x55b3ce0873de <unknown>
+#20 0x7fbde369cb84 <unknown>
+#21 0x7fbde3729d6c <unknown>
+
+[13:45:37] [PJ] Abrindo SIPII...
+[13:46:36]   [PJ] RENDA FIXA SIMPLES: 5 fundos.
+[13:47:35]   [PJ] RENDA FIXA: 38 fundos.
+[13:47:50]   [PJ] RENDA FIXA REFERENCIADO: 8 fundos.
+[13:47:58]   [PJ] RENDA FIXA CURTO PRAZO: 2 fundos.
+[13:48:39]   [PJ] MULTIMERCADO: 27 fundos.
+[13:48:46]   [PJ] CAMBIAL: 1 fundos.
+[13:49:26]   [PJ] ACOES: 28 fundos.
+[13:49:27] [GOV] Abrindo SIPII...
+[13:50:12] [GOV] Erro geral: Message: stale element reference: stale element not found
+  (Session info: chrome=151.0.7922.108); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+#0 0x55f2eb6ab82a <unknown>
+#1 0x55f2eb01efc9 <unknown>
+#2 0x55f2eb03409b <unknown>
+#3 0x55f2eb032b31 <unknown>
+#4 0x55f2eb026bd1 <unknown>
+#5 0x55f2eb026d0e <unknown>
+#6 0x55f2eb024d89 <unknown>
+#7 0x55f2eb028d68 <unknown>
+#8 0x55f2eb0be2a1 <unknown>
+#9 0x55f2eb0bd1a3 <unknown>
+#10 0x55f2eb067d32 <unknown>
+#11 0x55f2eb068bb1 <unknown>
+#12 0x55f2eb670bb0 <unknown>
+#13 0x55f2eb66f22a <unknown>
+#14 0x55f2eb659c55 <unknown>
+#15 0x55f2eb66feea <unknown>
+#16 0x55f2eb641b50 <unknown>
+#17 0x55f2eb697208 <unknown>
+#18 0x55f2eb6973a5 <unknown>
+#19 0x55f2eb6aa3de <unknown>
+#20 0x7fda2a29cb84 <unknown>
+#21 0x7fda2a329d6c <unknown>
+
+[13:50:12] [RPPS] Abrindo SIPII...
+[13:54:14]   [RPPS] RENDA FIXA: 19 fundos.
+[13:54:38]   [RPPS] RENDA FIXA REFERENCIADO: 5 fundos.
+[13:55:26]   [RPPS] MULTIMERCADO: 14 fundos.
+[13:56:16]   [RPPS] ACOES: 14 fundos.
+[13:56:17] [TODOS] Abrindo SIPII...
+[13:57:48]   [TODOS] RENDA FIXA SIMPLES: 2 fundos.
+[14:00:20]   [TODOS] Sessão perdida em 'RENDA FIXA'. Reiniciando...
+[14:00:20] [TODOS] Abrindo SIPII...
+[14:01:19]   [TODOS] Falha ao recuperar 'RENDA FIXA': Message: Link não encontrado: TODOS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[14:01:19]   [TODOS] Sessão perdida em 'RENDA FIXA REFERENCIADO'. Reiniciando...
+[14:01:19] [TODOS] Abrindo SIPII...
+[14:04:09]   [TODOS] RENDA FIXA REFERENCIADO (recuperado): 8 fundos.
+[14:04:42]   [TODOS] RENDA FIXA CURTO PRAZO: 3 fundos.
+[14:06:45]   [TODOS] Sessão perdida em 'MULTIMERCADO'. Reiniciando...
+[14:06:45] [TODOS] Abrindo SIPII...
+[14:08:46]   [TODOS] Falha ao recuperar 'MULTIMERCADO': HTTPConnectionPool(host='localhost', port=45009): Read timed out. (read timeout=120)
+[14:10:46]   [TODOS] Erro em 'CAMBIAL': HTTPConnectionPool(host='localhost', port=45009): Read timed out. (read timeout=120)
+[14:11:45]   [TODOS] Sessão perdida em 'ACOES'. Reiniciando...
+[14:11:46] [TODOS] Abrindo SIPII...
+[14:13:46]   [TODOS] Falha ao recuperar 'ACOES': HTTPConnectionPool(host='localhost', port=37197): Read timed out. (read timeout=120)
+[14:15:46]   [TODOS] Erro em 'FUNDO DE INDICE': HTTPConnectionPool(host='localhost', port=37197): Read timed out. (read timeout=120)
+[14:16:46] ETAPA 3 — Associando URLs (estáticas + dinâmicas)...
+[14:16:46]   Dicionário estático : 116 entradas
+[14:16:46]   URLs encontradas    : 145/158
+[14:16:46]   Sem URL             : 13/158
+[14:16:46]   Fundos SEM URL:
+[14:16:46]     - CAIXA FIC FIF EXCLUSIVO FUNC RF CREDITO PRIVADO LP RESP LTDA
+[14:16:46]     - CAIXA EXPERT VINLAND DEB IN INFRA RF CRED PRIV LP RESP LTDA (1) (2) (3)
+[14:16:46]     - CAIXA EXPERT ABSOLUTE CRETA FIC FIF RF CRED PRIV LP - RESP LTDA (1)
+[14:16:46]     - CAIXA EXPERT VOX DESENV SUSTENTAVEL IS RF CRED PRIV LP - RESP LTDA (1) (2)
+[14:16:46]     - CAIXA SIGMA FUNCIONARIOS FIC FIF RF REF DI LP - RESP LTDA (2) (3)
+[14:16:46]     - CAIXA BRASIL ESMERALDA FIC FIF RF REF DI CRED PRIV LONGO PRAZO RESP LTDA (2
+[14:16:46]     - CAIXA CARTEIRA QUANT UNO FIC FIF MM LP RESP LTDA (1) (2) (3)
+[14:16:46]     - CAIXA CARTEIRA QUANT QUALI FIC FIF MM LP RESP LTDA (1) (2) (3)
+[14:16:46]     - CAIXA CARTEIRA QUANT DUO FIC FIF MM LP RESP LTDA (1) (2) (3)
+[14:16:46]     - CAIXA HASHDEX NASDAQ CRYPTO INDEX FIC FIF MM RESP LTDA (1) (2)
+[14:16:46]     - CAIXA FIC FIM CAPITAL PROTEGIDO CICLICO II LP - RL (1)
+[14:16:46]     - CAIXA ATENA FIC FIF AÇÕES LIVRE QUANT RESP LTDA
+[14:16:46]     - CAIXA ATENA FIC FIF AÇÕES BRASIL LIVRE QUANT RESP LTDA
+[14:16:46] ETAPA 4 — Baixando JSON da CAIXA Asset...
+[14:16:48]   JSON Asset salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_asset.json
+[14:16:48]   Histórico JSON salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_asset_20260818.json
+[14:16:48]   Fundos no JSON Asset: 199
+[14:16:48]   Asset matches encontrados: 156/158
+[14:16:48]   Asset sem match: 2/158
+[14:16:48] CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/dados_atuais.csv
+[14:16:48] Histórico CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20260818.csv
+[14:16:49] Excel salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20260818.xlsx
+[14:16:49] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
+[14:16:49] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20260818.json
+[14:16:49] SUCESSO: 158 fundos consolidados e enriquecidos salvos.
