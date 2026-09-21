@@ -7285,3 +7285,30 @@ Stacktrace:
 [16:51:12] [TODOS] Abrindo SIPII...
 [16:53:12] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=42993): Read timed out. (read timeout=120)
 [16:53:22] ATENÇÃO: Nenhum dado coletado.
+[18:15:21] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[18:15:21] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[18:15:23]   [CAIXA] renda-fixa → +39 links (39 total)
+[18:15:25]   [CAIXA] referenciados → +4 links (43 total)
+[18:15:26]   [CAIXA] fundo-simples → +2 links (45 total)
+[18:15:28]   [CAIXA] curto-prazo → +1 links (46 total)
+[18:15:29]   [CAIXA] multimercado → +19 links (65 total)
+[18:15:31]   [CAIXA] cambiais → +1 links (66 total)
+[18:15:33]   [CAIXA] fundos-de-acoes → +12 links (78 total)
+[18:15:34]   [CAIXA] fundos-de-indices → +2 links (80 total)
+[18:15:36]   [CAIXA] renda-fixa → +8 links (88 total)
+[18:15:38]   [CAIXA] empresa → +5 links (93 total)
+[18:15:39]   [CAIXA] fmp-fgts → HTTP 404
+[18:15:39]   [CAIXA] rpps → +8 links (101 total)
+[18:15:40] [CAIXA] Total URLs dinâmicas: 101
+[18:15:40] ETAPA 2 — Coletando dados do SIPII...
+[18:15:47] [PF] Abrindo SIPII...
+[18:17:47] [PF] Erro geral: HTTPConnectionPool(host='localhost', port=44455): Read timed out. (read timeout=120)
+[18:18:01] [PJ] Abrindo SIPII...
+[18:20:01] [PJ] Erro geral: HTTPConnectionPool(host='localhost', port=60445): Read timed out. (read timeout=120)
+[18:20:12] [GOV] Abrindo SIPII...
+[18:22:12] [GOV] Erro geral: HTTPConnectionPool(host='localhost', port=46035): Read timed out. (read timeout=120)
+[18:22:23] [RPPS] Abrindo SIPII...
+[18:24:23] [RPPS] Erro geral: HTTPConnectionPool(host='localhost', port=51707): Read timed out. (read timeout=120)
+[18:24:34] [TODOS] Abrindo SIPII...
+[18:26:34] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=42005): Read timed out. (read timeout=120)
+[18:26:47] ATENÇÃO: Nenhum dado coletado.
