@@ -8021,3 +8021,30 @@ Stacktrace:
 [18:27:46] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [18:27:46] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20260929.json
 [18:27:46] SUCESSO: 169 fundos consolidados e enriquecidos salvos.
+[18:03:19] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[18:03:19] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[18:03:19]   [CAIXA] renda-fixa → HTTP 403
+[18:03:19]   [CAIXA] referenciados → HTTP 403
+[18:03:19]   [CAIXA] fundo-simples → HTTP 403
+[18:03:19]   [CAIXA] curto-prazo → HTTP 403
+[18:03:19]   [CAIXA] multimercado → HTTP 403
+[18:03:19]   [CAIXA] cambiais → HTTP 403
+[18:03:19]   [CAIXA] fundos-de-acoes → HTTP 403
+[18:03:19]   [CAIXA] fundos-de-indices → HTTP 403
+[18:03:19]   [CAIXA] renda-fixa → HTTP 403
+[18:03:19]   [CAIXA] empresa → HTTP 403
+[18:03:19]   [CAIXA] fmp-fgts → HTTP 403
+[18:03:19]   [CAIXA] rpps → HTTP 403
+[18:03:19] [CAIXA] Total URLs dinâmicas: 0
+[18:03:19] ETAPA 2 — Coletando dados do SIPII...
+[18:03:26] [PF] Abrindo SIPII...
+[18:05:26] [PF] Erro geral: HTTPConnectionPool(host='localhost', port=60103): Read timed out. (read timeout=120)
+[18:05:36] [PJ] Abrindo SIPII...
+[18:07:36] [PJ] Erro geral: HTTPConnectionPool(host='localhost', port=33145): Read timed out. (read timeout=120)
+[18:07:49] [GOV] Abrindo SIPII...
+[18:09:49] [GOV] Erro geral: HTTPConnectionPool(host='localhost', port=49175): Read timed out. (read timeout=120)
+[18:10:00] [RPPS] Abrindo SIPII...
+[18:12:00] [RPPS] Erro geral: HTTPConnectionPool(host='localhost', port=51831): Read timed out. (read timeout=120)
+[18:12:14] [TODOS] Abrindo SIPII...
+[18:14:14] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=49645): Read timed out. (read timeout=120)
+[18:14:26] ATENÇÃO: Nenhum dado coletado.
