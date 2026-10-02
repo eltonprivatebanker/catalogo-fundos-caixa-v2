@@ -8133,3 +8133,32 @@ Stacktrace:
 [19:22:22] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [19:22:22] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261001.json
 [19:22:22] SUCESSO: 118 fundos consolidados e enriquecidos salvos.
+[17:57:34] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[17:57:34] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[17:57:38]   [CAIXA] renda-fixa → +39 links (39 total)
+[17:57:39]   [CAIXA] referenciados → +4 links (43 total)
+[17:57:41]   [CAIXA] fundo-simples → +2 links (45 total)
+[17:57:42]   [CAIXA] curto-prazo → +1 links (46 total)
+[17:57:44]   [CAIXA] multimercado → +19 links (65 total)
+[17:57:46]   [CAIXA] cambiais → +1 links (66 total)
+[17:57:47]   [CAIXA] fundos-de-acoes → +12 links (78 total)
+[17:57:49]   [CAIXA] fundos-de-indices → +2 links (80 total)
+[17:57:50]   [CAIXA] renda-fixa → +8 links (88 total)
+[17:57:52]   [CAIXA] empresa → +5 links (93 total)
+[17:57:53]   [CAIXA] fmp-fgts → HTTP 404
+[17:57:54]   [CAIXA] rpps → +8 links (101 total)
+[17:57:55] [CAIXA] Total URLs dinâmicas: 101
+[17:57:55] ETAPA 2 — Coletando dados do SIPII...
+[17:57:59] [PF] Abrindo SIPII...
+[17:59:59] [PF] Erro geral: HTTPConnectionPool(host='localhost', port=39105): Read timed out. (read timeout=120)
+[18:02:59] [PJ] Abrindo SIPII...
+[18:03:05] [PJ] Erro geral: Message: Link não encontrado: PESSOA JURÍDICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:03:05] [GOV] Abrindo SIPII...
+[18:03:08] [GOV] Erro geral: Message: Link não encontrado: GOVERNO; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:03:09] [RPPS] Abrindo SIPII...
+[18:05:09] [RPPS] Erro geral: HTTPConnectionPool(host='localhost', port=44001): Read timed out. (read timeout=120)
+[18:08:10] [TODOS] Abrindo SIPII...
+[18:10:10] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=48983): Read timed out. (read timeout=120)
+[18:11:28] ATENÇÃO: Nenhum dado coletado.
