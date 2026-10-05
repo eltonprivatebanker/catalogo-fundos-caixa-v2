@@ -8162,3 +8162,27 @@ Stacktrace:
 [18:08:10] [TODOS] Abrindo SIPII...
 [18:10:10] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=48983): Read timed out. (read timeout=120)
 [18:11:28] ATENÇÃO: Nenhum dado coletado.
+[20:38:02] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[20:38:02] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[20:38:04]   [CAIXA] renda-fixa → +39 links (39 total)
+[20:38:06]   [CAIXA] referenciados → +4 links (43 total)
+[20:38:07]   [CAIXA] fundo-simples → +2 links (45 total)
+[20:38:09]   [CAIXA] curto-prazo → +1 links (46 total)
+[20:38:10]   [CAIXA] multimercado → +19 links (65 total)
+[20:38:13]   [CAIXA] cambiais → +1 links (66 total)
+[20:38:14]   [CAIXA] fundos-de-acoes → +12 links (78 total)
+[20:38:16]   [CAIXA] fundos-de-indices → +2 links (80 total)
+[20:38:17]   [CAIXA] renda-fixa → +8 links (88 total)
+[20:38:19]   [CAIXA] empresa → +5 links (93 total)
+[20:38:20]   [CAIXA] fmp-fgts → HTTP 404
+[20:38:21]   [CAIXA] rpps → +8 links (101 total)
+[20:38:22] [CAIXA] Total URLs dinâmicas: 101
+[20:38:22] ETAPA 2 — Coletando dados do SIPII...
+[20:38:31] [PF] Abrindo SIPII...
+[20:38:44] [PJ] Abrindo SIPII...
+[20:38:56] [GOV] Abrindo SIPII...
+[20:39:08] [RPPS] Abrindo SIPII...
+[20:39:20] [TODOS] Abrindo SIPII...
+[20:39:24] [TODOS] Erro geral: Message: Link não encontrado: TODOS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[20:39:24] ATENÇÃO: Nenhum dado coletado.
