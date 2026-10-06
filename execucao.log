@@ -8186,3 +8186,34 @@ Stacktrace:
 [20:39:24] [TODOS] Erro geral: Message: Link não encontrado: TODOS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 
 [20:39:24] ATENÇÃO: Nenhum dado coletado.
+[18:31:20] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[18:31:20] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[18:31:25]   [CAIXA] renda-fixa → +39 links (39 total)
+[18:31:26]   [CAIXA] referenciados → +4 links (43 total)
+[18:31:28]   [CAIXA] fundo-simples → +2 links (45 total)
+[18:31:30]   [CAIXA] curto-prazo → +1 links (46 total)
+[18:31:31]   [CAIXA] multimercado → +19 links (65 total)
+[18:31:34]   [CAIXA] cambiais → +1 links (66 total)
+[18:31:35]   [CAIXA] fundos-de-acoes → +12 links (78 total)
+[18:31:37]   [CAIXA] fundos-de-indices → +2 links (80 total)
+[18:31:40]   [CAIXA] renda-fixa → +8 links (88 total)
+[18:31:43]   [CAIXA] empresa → +5 links (93 total)
+[18:31:45]   [CAIXA] fmp-fgts → HTTP 404
+[18:31:45]   [CAIXA] rpps → +8 links (101 total)
+[18:31:46] [CAIXA] Total URLs dinâmicas: 101
+[18:31:46] ETAPA 2 — Coletando dados do SIPII...
+[18:31:54] [PF] Abrindo SIPII...
+[18:31:58] [PF] Erro geral: Message: Link não encontrado: PESSOA FÍSICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:31:58] [PJ] Abrindo SIPII...
+[18:32:02] [PJ] Erro geral: Message: Link não encontrado: PESSOA JURÍDICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:32:02] [GOV] Abrindo SIPII...
+[18:32:06] [GOV] Erro geral: Message: Link não encontrado: GOVERNO; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:32:06] [RPPS] Abrindo SIPII...
+[18:32:10] [RPPS] Erro geral: Message: Link não encontrado: RPPS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:32:10] [TODOS] Abrindo SIPII...
+[18:34:10] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=56817): Read timed out. (read timeout=120)
+[18:34:20] ATENÇÃO: Nenhum dado coletado.
