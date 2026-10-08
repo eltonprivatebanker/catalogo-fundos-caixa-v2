@@ -8245,3 +8245,33 @@ Stacktrace:
 [19:16:54] [TODOS] Abrindo SIPII...
 [19:18:54] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=35761): Read timed out. (read timeout=120)
 [19:19:04] ATENÇÃO: Nenhum dado coletado.
+[18:56:47] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[18:56:47] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[18:56:49]   [CAIXA] renda-fixa → +39 links (39 total)
+[18:56:51]   [CAIXA] referenciados → +4 links (43 total)
+[18:56:53]   [CAIXA] fundo-simples → +2 links (45 total)
+[18:56:54]   [CAIXA] curto-prazo → +1 links (46 total)
+[18:56:56]   [CAIXA] multimercado → +19 links (65 total)
+[18:56:58]   [CAIXA] cambiais → +1 links (66 total)
+[18:56:59]   [CAIXA] fundos-de-acoes → +12 links (78 total)
+[18:57:01]   [CAIXA] fundos-de-indices → +2 links (80 total)
+[18:57:02]   [CAIXA] renda-fixa → +8 links (88 total)
+[18:57:04]   [CAIXA] empresa → +5 links (93 total)
+[18:57:05]   [CAIXA] fmp-fgts → HTTP 404
+[18:57:06]   [CAIXA] rpps → +8 links (101 total)
+[18:57:07] [CAIXA] Total URLs dinâmicas: 101
+[18:57:07] ETAPA 2 — Coletando dados do SIPII...
+[18:57:27] [PF] Abrindo SIPII...
+[18:57:32] [PF] Erro geral: Message: Link não encontrado: PESSOA FÍSICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:57:33] [PJ] Abrindo SIPII...
+[18:57:36] [PJ] Erro geral: Message: Link não encontrado: PESSOA JURÍDICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:57:37] [GOV] Abrindo SIPII...
+[18:57:40] [GOV] Erro geral: Message: Link não encontrado: GOVERNO; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:57:41] [RPPS] Abrindo SIPII...
+[18:59:41] [RPPS] Erro geral: HTTPConnectionPool(host='localhost', port=53117): Read timed out. (read timeout=120)
+[19:02:41] [TODOS] Abrindo SIPII...
+[19:04:41] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=53059): Read timed out. (read timeout=120)
+[19:07:41] ATENÇÃO: Nenhum dado coletado.
