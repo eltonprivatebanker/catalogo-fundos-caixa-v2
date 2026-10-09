@@ -8275,3 +8275,29 @@ Stacktrace:
 [19:02:41] [TODOS] Abrindo SIPII...
 [19:04:41] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=53059): Read timed out. (read timeout=120)
 [19:07:41] ATENÇÃO: Nenhum dado coletado.
+[18:26:55] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[18:26:55] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[18:26:57]   [CAIXA] renda-fixa → +39 links (39 total)
+[18:26:59]   [CAIXA] referenciados → +4 links (43 total)
+[18:27:00]   [CAIXA] fundo-simples → +2 links (45 total)
+[18:27:02]   [CAIXA] curto-prazo → +1 links (46 total)
+[18:27:03]   [CAIXA] multimercado → +19 links (65 total)
+[18:27:05]   [CAIXA] cambiais → +1 links (66 total)
+[18:27:07]   [CAIXA] fundos-de-acoes → +12 links (78 total)
+[18:27:08]   [CAIXA] fundos-de-indices → +2 links (80 total)
+[18:27:10]   [CAIXA] renda-fixa → +8 links (88 total)
+[18:27:11]   [CAIXA] empresa → +5 links (93 total)
+[18:27:12]   [CAIXA] fmp-fgts → HTTP 404
+[18:27:13]   [CAIXA] rpps → +8 links (101 total)
+[18:27:14] [CAIXA] Total URLs dinâmicas: 101
+[18:27:14] ETAPA 2 — Coletando dados do SIPII...
+[18:27:20] [PF] Abrindo SIPII...
+[18:27:24] [PF] Erro geral: Message: Link não encontrado: PESSOA FÍSICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:27:25] [PJ] Abrindo SIPII...
+[18:27:38] [GOV] Abrindo SIPII...
+[18:27:49] [RPPS] Abrindo SIPII...
+[18:28:03] [TODOS] Abrindo SIPII...
+[18:28:07] [TODOS] Erro geral: Message: Link não encontrado: TODOS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[18:28:07] ATENÇÃO: Nenhum dado coletado.
