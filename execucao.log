@@ -8301,3 +8301,109 @@ Stacktrace:
 [18:28:07] [TODOS] Erro geral: Message: Link não encontrado: TODOS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 
 [18:28:07] ATENÇÃO: Nenhum dado coletado.
+[21:20:53] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[21:20:53] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[21:20:55]   [CAIXA] renda-fixa → +39 links (39 total)
+[21:20:57]   [CAIXA] referenciados → +4 links (43 total)
+[21:20:58]   [CAIXA] fundo-simples → +2 links (45 total)
+[21:21:00]   [CAIXA] curto-prazo → +1 links (46 total)
+[21:21:01]   [CAIXA] multimercado → +19 links (65 total)
+[21:21:03]   [CAIXA] cambiais → +1 links (66 total)
+[21:21:05]   [CAIXA] fundos-de-acoes → +12 links (78 total)
+[21:21:06]   [CAIXA] fundos-de-indices → +2 links (80 total)
+[21:21:08]   [CAIXA] renda-fixa → +8 links (88 total)
+[21:21:09]   [CAIXA] empresa → +5 links (93 total)
+[21:21:10]   [CAIXA] fmp-fgts → HTTP 404
+[21:21:11]   [CAIXA] rpps → +8 links (101 total)
+[21:21:12] [CAIXA] Total URLs dinâmicas: 101
+[21:21:12] ETAPA 2 — Coletando dados do SIPII...
+[21:21:19] [PF] Abrindo SIPII...
+[21:21:40]   [PF] RENDA FIXA SIMPLES: 3 fundos.
+[21:21:54]   [PF] RENDA FIXA: 41 fundos.
+[21:21:57]   [PF] Erro em 'RENDA FIXA REFERENCIADO': Tabela ativa não encontrada
+[21:21:57]   [PF] Sessão perdida em 'RENDA FIXA CURTO PRAZO'. Reiniciando...
+[21:21:57] [PF] Abrindo SIPII...
+[21:22:14]   [PF] RENDA FIXA CURTO PRAZO (recuperado): 1 fundos.
+[21:22:25]   [PF] MULTIMERCADO: 30 fundos.
+[21:22:29]   [PF] CAMBIAL: 1 fundos.
+[21:22:41]   [PF] ACOES: 30 fundos.
+[21:22:44]   [PF] FUNDO DE INDICE: 1 fundos.
+[21:22:49]   [PF] FUNDOS MUTUOS DE PRIVATIZACAO: 9 fundos.
+[21:22:49] [PJ] Abrindo SIPII...
+[21:23:09]   [PJ] RENDA FIXA SIMPLES: 5 fundos.
+[21:23:23]   [PJ] RENDA FIXA: 38 fundos.
+[21:23:26]   [PJ] Erro em 'RENDA FIXA REFERENCIADO': Tabela ativa não encontrada
+[21:23:26]   [PJ] Sessão perdida em 'RENDA FIXA CURTO PRAZO'. Reiniciando...
+[21:23:26] [PJ] Abrindo SIPII...
+[21:23:45]   [PJ] RENDA FIXA CURTO PRAZO (recuperado): 2 fundos.
+[21:23:55]   [PJ] MULTIMERCADO: 27 fundos.
+[21:23:58]   [PJ] Erro em 'CAMBIAL': Tabela ativa não encontrada
+[21:23:58]   [PJ] Sessão perdida em 'ACOES'. Reiniciando...
+[21:23:58] [PJ] Abrindo SIPII...
+[21:24:14]   [PJ] Falha ao recuperar 'ACOES': Tabela ativa não encontrada
+[21:24:15] [GOV] Abrindo SIPII...
+[21:24:34]   [GOV] RENDA FIXA SIMPLES: 3 fundos.
+[21:24:48]   [GOV] RENDA FIXA: 41 fundos.
+[21:24:51]   [GOV] Erro em 'RENDA FIXA REFERENCIADO': Tabela ativa não encontrada
+[21:24:51]   [GOV] Sessão perdida em 'RENDA FIXA CURTO PRAZO'. Reiniciando...
+[21:24:51] [GOV] Abrindo SIPII...
+[21:25:09]   [GOV] RENDA FIXA CURTO PRAZO (recuperado): 3 fundos.
+[21:25:14]   [GOV] MULTIMERCADO: 6 fundos.
+[21:25:14]   [GOV] Sessão perdida em 'CAMBIAL'. Reiniciando...
+[21:25:14] [GOV] Abrindo SIPII...
+[21:25:18]   [GOV] Falha ao recuperar 'CAMBIAL': Message: Link não encontrado: GOVERNO; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[21:25:18]   [GOV] Sessão perdida em 'ACOES'. Reiniciando...
+[21:25:18] [GOV] Abrindo SIPII...
+[21:25:36]   [GOV] ACOES (recuperado): 4 fundos.
+[21:25:36]   [GOV] Sessão perdida em 'FUNDO DE INDICE'. Reiniciando...
+[21:25:36] [GOV] Abrindo SIPII...
+[21:25:51]   [GOV] Falha ao recuperar 'FUNDO DE INDICE': Message: Link não encontrado: FUNDO DE ÍNDICE; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[21:25:51]   [GOV] Sessão perdida em 'FUNDOS MUTUOS DE PRIVATIZACAO'. Reiniciando...
+[21:25:51] [GOV] Abrindo SIPII...
+[21:25:55]   [GOV] Falha ao recuperar 'FUNDOS MUTUOS DE PRIVATIZACAO': Message: Link não encontrado: GOVERNO; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[21:25:55] [RPPS] Abrindo SIPII...
+[21:26:10] [TODOS] Abrindo SIPII...
+[21:26:13] [TODOS] Erro geral: Message: Link não encontrado: TODOS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[21:26:13] ETAPA 3 — Associando URLs (estáticas + dinâmicas)...
+[21:26:13]   Dicionário estático : 116 entradas
+[21:26:13]   URLs encontradas    : 111/133
+[21:26:13]   Sem URL             : 22/133
+[21:26:13]   Fundos SEM URL:
+[21:26:13]     - CAIXA FIC FIF EXCLUSIVO FUNC RF CREDITO PRIVADO LP RESP LTDA
+[21:26:13]     - CAIXA IMPULSO SINGULAR DEB INC FIF INC INFRA RF CRÉD PRIV LP RESP LTDA - SI
+[21:26:13]     - CAIXA EXPERT VOX DESENV SUSTENTAVEL IS RF CRED PRIV LP - RESP LTDA (1) (2)
+[21:26:13]     - CAIXA EXPERT VINLAND DEB IN INFRA RF CRED PRIV LP RESP LTDA (1) (2)
+[21:26:13]     - CAIXA EXPERT ABSOLUTE CRETA FIC FIF RF CRED PRIV LP - RESP LTDA (1)
+[21:26:13]     - CAIXA CARTEIRA QUANT DUO FIC FIF MM LP RESP LTDA (1) (2)
+[21:26:13]     - CAIXA CARTEIRA QUANT QUALI FIC FIF MM LP RESP LTDA (1) (2)
+[21:26:13]     - CAIXA CARTEIRA QUANT UNO FIC FIF MM LP RESP LTDA (1) (2)
+[21:26:13]     - CAIXA FIC FIF FUNCIONARIOS ESTRATEGIA LIVRE MULTIMERCADO LP RESP LTDA (1)
+[21:26:13]     - CAIXA HASHDEX NASDAQ CRYPTO INDEX FIC FIF MM RESP LTDA (1)
+[21:26:13]     - CAIXA FIC FIM CAPITAL PROTEGIDO CICLICO II LP - RL (1)
+[21:26:13]     - CAIXA ATENA FIC FIF AÇÕES FUNCIONÁRIOS LIVRE QUANT RESP LTDA
+[21:26:13]     - CAIXA ATENA FIC FIF AÇÕES LIVRE QUANT RESP LTDA
+[21:26:13]     - CAIXA FMP-FGTS ELETROBRAS MIGRACAO
+[21:26:13]     - CAIXA FMP-FGTS ELETROBRAS RESP LTDA
+[21:26:13]     - CAIXA FMP-FGTS PETROBRÁS IV RESP LTDA
+[21:26:13]     - CAIXA FMP-FGTS VALE RIO DOCE II RESP LTDA
+[21:26:13]     - CAIXA FMP-FGTS CL ABSOLUTO RESP LTDA
+[21:26:13]     - CAIXA FMP-FGTS VALE RIO DOCE MIGRAÇÃO RESP LTDA
+[21:26:13]     - CAIXA FMP-FGTS PETROBRÁS II RESP LTDA
+[21:26:13]     - CAIXA FMP-FGTS VALE RIO DOCE I RESP LTDA
+[21:26:13]     - CAIXA FMP-FGTS PETROBRÁS III RESP LTDA
+[21:26:13] ETAPA 4 — Baixando JSON da CAIXA Asset...
+[21:26:15]   JSON Asset salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_asset.json
+[21:26:15]   Histórico JSON salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_asset_20261012.json
+[21:26:15]   Fundos no JSON Asset: 208
+[21:26:15]   Asset matches encontrados: 128/133
+[21:26:15]   Asset sem match: 5/133
+[21:26:15] CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/dados_atuais.csv
+[21:26:15] Histórico CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20261012.csv
+[21:26:16] Excel salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20261012.xlsx
+[21:26:16] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
+[21:26:16] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261012.json
+[21:26:16] SUCESSO: 133 fundos consolidados e enriquecidos salvos.
