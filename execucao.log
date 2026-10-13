@@ -8407,3 +8407,142 @@ Stacktrace:
 [21:26:16] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [21:26:16] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261012.json
 [21:26:16] SUCESSO: 133 fundos consolidados e enriquecidos salvos.
+[19:25:17] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[19:25:17] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[19:25:20]   [CAIXA] renda-fixa → +39 links (39 total)
+[19:25:21]   [CAIXA] referenciados → +4 links (43 total)
+[19:25:23]   [CAIXA] fundo-simples → +2 links (45 total)
+[19:25:24]   [CAIXA] curto-prazo → +1 links (46 total)
+[19:25:26]   [CAIXA] multimercado → +19 links (65 total)
+[19:25:28]   [CAIXA] cambiais → +1 links (66 total)
+[19:25:29]   [CAIXA] fundos-de-acoes → +12 links (78 total)
+[19:25:31]   [CAIXA] fundos-de-indices → +2 links (80 total)
+[19:25:33]   [CAIXA] renda-fixa → +8 links (88 total)
+[19:25:34]   [CAIXA] empresa → +5 links (93 total)
+[19:25:35]   [CAIXA] fmp-fgts → HTTP 404
+[19:25:36]   [CAIXA] rpps → +8 links (101 total)
+[19:25:37] [CAIXA] Total URLs dinâmicas: 101
+[19:25:37] ETAPA 2 — Coletando dados do SIPII...
+[19:25:38] [PF] Abrindo SIPII...
+[19:25:52]   [PF] RENDA FIXA SIMPLES: 3 fundos.
+[19:25:54]   [PF] Sessão perdida em 'RENDA FIXA'. Reiniciando...
+[19:25:55] [PF] Abrindo SIPII...
+[19:26:26]   [PF] RENDA FIXA (recuperado): 41 fundos.
+[19:26:28]   [PF] Erro em 'RENDA FIXA REFERENCIADO': Tabela ativa não encontrada
+[19:26:28]   [PF] Sessão perdida em 'RENDA FIXA CURTO PRAZO'. Reiniciando...
+[19:26:29] [PF] Abrindo SIPII...
+[19:26:32]   [PF] Falha ao recuperar 'RENDA FIXA CURTO PRAZO': Message: Link não encontrado: PESSOA FÍSICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[19:26:32]   [PF] Sessão perdida em 'MULTIMERCADO'. Reiniciando...
+[19:26:33] [PF] Abrindo SIPII...
+[19:26:40]   [PF] Falha ao recuperar 'MULTIMERCADO': Message: Link não encontrado: PESSOA FÍSICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[19:26:40]   [PF] Sessão perdida em 'CAMBIAL'. Reiniciando...
+[19:26:40] [PF] Abrindo SIPII...
+[19:26:44]   [PF] Falha ao recuperar 'CAMBIAL': Message: Link não encontrado: PESSOA FÍSICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[19:26:44]   [PF] Sessão perdida em 'ACOES'. Reiniciando...
+[19:26:44] [PF] Abrindo SIPII...
+[19:26:58]   [PF] Falha ao recuperar 'ACOES': Message: no such element: Unable to locate element: {"method":"css selector","selector":"table"}
+  (Session info: chrome=154.0.8037.97); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+#0 0x55c4484fdaaa <unknown>
+#1 0x55c447e2baa9 <unknown>
+#2 0x55c447e823ff <unknown>
+#3 0x55c447e82671 <unknown>
+#4 0x55c447e76aa6 <unknown>
+#5 0x55c447e76987 <unknown>
+#6 0x55c447ecc1df <unknown>
+#7 0x55c447e75148 <unknown>
+#8 0x55c447e75f11 <unknown>
+#9 0x55c4484c05ac <unknown>
+#10 0x55c4484bedc5 <unknown>
+#11 0x55c4484a9e95 <unknown>
+#12 0x55c4484bfa1a <unknown>
+#13 0x55c4484925c9 <unknown>
+#14 0x55c4484e80f8 <unknown>
+#15 0x55c4484e8295 <unknown>
+#16 0x55c4484fc3f3 <unknown>
+#17 0x7fda5329cb84 <unknown>
+#18 0x7fda53329ecc <unknown>
+
+[19:27:01]   [PF] Sessão perdida em 'FUNDO DE INDICE'. Reiniciando...
+[19:27:01] [PF] Abrindo SIPII...
+[19:27:05]   [PF] Falha ao recuperar 'FUNDO DE INDICE': Message: Link não encontrado: PESSOA FÍSICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[19:27:05]   [PF] Sessão perdida em 'FUNDOS MUTUOS DE PRIVATIZACAO'. Reiniciando...
+[19:27:05] [PF] Abrindo SIPII...
+[19:27:22]   [PF] Falha ao recuperar 'FUNDOS MUTUOS DE PRIVATIZACAO': Tabela ativa não encontrada
+[19:27:22] [PJ] Abrindo SIPII...
+[19:27:44]   [PJ] RENDA FIXA SIMPLES: 5 fundos.
+[19:27:58]   [PJ] RENDA FIXA: 38 fundos.
+[19:28:00]   [PJ] Erro em 'RENDA FIXA REFERENCIADO': Tabela ativa não encontrada
+[19:28:00]   [PJ] Sessão perdida em 'RENDA FIXA CURTO PRAZO'. Reiniciando...
+[19:28:01] [PJ] Abrindo SIPII...
+[19:28:04]   [PJ] Falha ao recuperar 'RENDA FIXA CURTO PRAZO': Message: Link não encontrado: PESSOA JURÍDICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[19:28:04]   [PJ] Sessão perdida em 'MULTIMERCADO'. Reiniciando...
+[19:28:05] [PJ] Abrindo SIPII...
+[19:28:08]   [PJ] Falha ao recuperar 'MULTIMERCADO': Message: Link não encontrado: PESSOA JURÍDICA; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[19:28:08]   [PJ] Sessão perdida em 'CAMBIAL'. Reiniciando...
+[19:28:09] [PJ] Abrindo SIPII...
+[19:28:30]   [PJ] CAMBIAL (recuperado): 1 fundos.
+[19:28:42]   [PJ] ACOES: 28 fundos.
+[19:28:42] [GOV] Abrindo SIPII...
+[19:29:04]   [GOV] RENDA FIXA: 2 fundos.
+[19:29:08]   [GOV] RENDA FIXA REFERENCIADO: 3 fundos.
+[19:29:12]   [GOV] RENDA FIXA CURTO PRAZO: 3 fundos.
+[19:29:16]   [GOV] MULTIMERCADO: 6 fundos.
+[19:29:20]   [GOV] ACOES: 4 fundos.
+[19:29:21] [RPPS] Abrindo SIPII...
+[19:29:56]   [RPPS] RENDA FIXA: 25 fundos.
+[19:29:59]   [RPPS] Erro em 'RENDA FIXA REFERENCIADO': Tabela ativa não encontrada
+[19:29:59]   [RPPS] Sessão perdida em 'MULTIMERCADO'. Reiniciando...
+[19:30:00] [RPPS] Abrindo SIPII...
+[19:30:03]   [RPPS] Falha ao recuperar 'MULTIMERCADO': Message: Link não encontrado: RPPS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[19:30:03]   [RPPS] Sessão perdida em 'ACOES'. Reiniciando...
+[19:30:03] [RPPS] Abrindo SIPII...
+[19:30:36]   [RPPS] ACOES (recuperado): 14 fundos.
+[19:30:36] [TODOS] Abrindo SIPII...
+[19:30:55]   [TODOS] RENDA FIXA SIMPLES: 2 fundos.
+[19:31:10]   [TODOS] RENDA FIXA: 42 fundos.
+[19:31:15]   [TODOS] RENDA FIXA REFERENCIADO: 8 fundos.
+[19:31:19]   [TODOS] RENDA FIXA CURTO PRAZO: 3 fundos.
+[19:31:26]   [TODOS] MULTIMERCADO: 14 fundos.
+[19:31:29]   [TODOS] CAMBIAL: 1 fundos.
+[19:31:40]   [TODOS] ACOES: 25 fundos.
+[19:31:43]   [TODOS] Erro em 'FUNDO DE INDICE': Tabela ativa não encontrada
+[19:31:43] ETAPA 3 — Associando URLs (estáticas + dinâmicas)...
+[19:31:43]   Dicionário estático : 116 entradas
+[19:31:43]   URLs encontradas    : 133/148
+[19:31:43]   Sem URL             : 15/148
+[19:31:43]   Fundos SEM URL:
+[19:31:43]     - CAIXA FIC FIF EXCLUSIVO FUNC RF CREDITO PRIVADO LP RESP LTDA
+[19:31:43]     - CAIXA IMPULSO SINGULAR DEB INC FIF INC INFRA RF CRÉD PRIV LP RESP LTDA - SI
+[19:31:43]     - CAIXA EXPERT VOX DESENV SUSTENTAVEL IS RF CRED PRIV LP - RESP LTDA (2)
+[19:31:43]     - CAIXA EXPERT VINLAND DEB IN INFRA RF CRED PRIV LP RESP LTDA (2)
+[19:31:43]     - CAIXA EXPERT ABSOLUTE CRETA FIC FIF RF CRED PRIV LP - RESP LTDA
+[19:31:43]     - CAIXA ATENA FIC FIF AÇÕES LIVRE QUANT RESP LTDA
+[19:31:43]     - CAIXA SIGMA SINGULAR FIC FIF RF REF DI LP RESP LTDA
+[19:31:43]     - CAIXA FIC FIM CAPITAL PROTEGIDO CICLICO II LP - RL
+[19:31:43]     - CAIXA BRASIL 2031 SEM CUPOM TP FIF RF RESP LTDA (2) (3)
+[19:31:43]     - CAIXA BRASIL 2028 SEM CUPOM TP FIF RF - RESP LTDA (2) (3)
+[19:31:43]     - CAIXA BRASIL 2033 SEM CUPOM TP FIF RF - RESP LTDA (2) (3)
+[19:31:43]     - CAIXA BRASIL 2037 SEM CUPOM TP FIF RF - RESP LTDA (2) (3)
+[19:31:43]     - CAIXA BRASIL 2029 SEM CUPOM TP FIF RF - RL (2) (3)
+[19:31:43]     - CAIXA BRASIL 2030 SEM CUPOM TP FIF RF - RESP LTDA (2) (3)
+[19:31:43]     - CAIXA ATENA FIC FIF AÇÕES BRASIL LIVRE QUANT RESP LTDA
+[19:31:43] ETAPA 4 — Baixando JSON da CAIXA Asset...
+[19:31:47]   JSON Asset salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_asset.json
+[19:31:47]   Histórico JSON salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_asset_20261013.json
+[19:31:47]   Fundos no JSON Asset: 208
+[19:31:47]   Asset matches encontrados: 145/148
+[19:31:47]   Asset sem match: 3/148
+[19:31:47] CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/dados_atuais.csv
+[19:31:47] Histórico CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20261013.csv
+[19:31:47] Excel salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20261013.xlsx
+[19:31:47] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
+[19:31:47] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261013.json
+[19:31:47] SUCESSO: 148 fundos consolidados e enriquecidos salvos.
