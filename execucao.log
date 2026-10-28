@@ -9624,3 +9624,30 @@ Stacktrace:
 [18:13:36] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [18:13:36] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261027.json
 [18:13:36] SUCESSO: 183 fundos consolidados e enriquecidos salvos.
+[18:25:05] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[18:25:05] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[18:25:10]   [CAIXA] renda-fixa → +40 links (40 total)
+[18:25:11]   [CAIXA] referenciados → +4 links (44 total)
+[18:25:13]   [CAIXA] fundo-simples → +2 links (46 total)
+[18:25:14]   [CAIXA] curto-prazo → +1 links (47 total)
+[18:25:16]   [CAIXA] multimercado → +19 links (66 total)
+[18:25:18]   [CAIXA] cambiais → +1 links (67 total)
+[18:25:20]   [CAIXA] fundos-de-acoes → +12 links (79 total)
+[18:25:22]   [CAIXA] fundos-de-indices → +2 links (81 total)
+[18:25:23]   [CAIXA] renda-fixa → +8 links (89 total)
+[18:25:25]   [CAIXA] empresa → +5 links (94 total)
+[18:25:26]   [CAIXA] fmp-fgts → HTTP 404
+[18:25:27]   [CAIXA] rpps → +8 links (102 total)
+[18:25:28] [CAIXA] Total URLs dinâmicas: 102
+[18:25:28] ETAPA 2 — Coletando dados do SIPII...
+[18:25:29] [PF] Abrindo SIPII...
+[18:27:29] [PF] Erro geral: HTTPConnectionPool(host='localhost', port=55559): Read timed out. (read timeout=120)
+[18:27:39] [PJ] Abrindo SIPII...
+[18:29:39] [PJ] Erro geral: HTTPConnectionPool(host='localhost', port=45085): Read timed out. (read timeout=120)
+[18:29:50] [GOV] Abrindo SIPII...
+[18:31:50] [GOV] Erro geral: HTTPConnectionPool(host='localhost', port=56021): Read timed out. (read timeout=120)
+[18:32:03] [RPPS] Abrindo SIPII...
+[18:34:03] [RPPS] Erro geral: HTTPConnectionPool(host='localhost', port=45557): Read timed out. (read timeout=120)
+[18:34:14] [TODOS] Abrindo SIPII...
+[18:36:14] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=34497): Read timed out. (read timeout=120)
+[18:36:27] ATENÇÃO: Nenhum dado coletado.
