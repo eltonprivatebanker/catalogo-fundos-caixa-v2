@@ -9863,3 +9863,153 @@ Stacktrace:
 [18:13:46] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [18:13:46] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261030.json
 [18:13:46] SUCESSO: 183 fundos consolidados e enriquecidos salvos.
+[21:51:04] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[21:51:04] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[21:51:08]   [CAIXA] renda-fixa → +40 links (40 total)
+[21:51:10]   [CAIXA] referenciados → +4 links (44 total)
+[21:51:11]   [CAIXA] fundo-simples → +2 links (46 total)
+[21:51:13]   [CAIXA] curto-prazo → +1 links (47 total)
+[21:51:14]   [CAIXA] multimercado → +19 links (66 total)
+[21:51:17]   [CAIXA] cambiais → +1 links (67 total)
+[21:51:18]   [CAIXA] fundos-de-acoes → +12 links (79 total)
+[21:51:20]   [CAIXA] fundos-de-indices → +2 links (81 total)
+[21:51:21]   [CAIXA] renda-fixa → +8 links (89 total)
+[21:51:23]   [CAIXA] empresa → +5 links (94 total)
+[21:51:24]   [CAIXA] fmp-fgts → HTTP 404
+[21:51:25]   [CAIXA] rpps → +8 links (102 total)
+[21:51:26] [CAIXA] Total URLs dinâmicas: 102
+[21:51:26] ETAPA 2 — Coletando dados do SIPII...
+[21:51:28] [PF] Abrindo SIPII...
+[21:52:13]   [PF] RENDA FIXA SIMPLES: 3 fundos.
+[21:52:44]   [PF] RENDA FIXA: 42 fundos.
+[21:53:01]   [PF] RENDA FIXA REFERENCIADO: 11 fundos.
+[21:53:06]   [PF] RENDA FIXA CURTO PRAZO: 1 fundos.
+[21:53:31]   [PF] MULTIMERCADO: 30 fundos.
+[21:53:37]   [PF] CAMBIAL: 1 fundos.
+[21:54:03]   [PF] ACOES: 30 fundos.
+[21:54:11]   [PF] FUNDO DE INDICE: 1 fundos.
+[21:54:22]   [PF] FUNDOS MUTUOS DE PRIVATIZACAO: 9 fundos.
+[21:54:23] [PJ] Abrindo SIPII...
+[21:54:56] [PJ] Erro geral: Message: stale element reference: stale element not found
+  (Session info: chrome=156.0.8078.47); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+#0 0x5fc4d1b797ea <unknown>
+#1 0x5fc4d14b89e5 <unknown>
+#2 0x5fc4d14c8243 <unknown>
+#3 0x5fc4d14c7743 <unknown>
+#4 0x5fc4d14c8549 <unknown>
+#5 0x5fc4d14be38e <unknown>
+#6 0x5fc4d14c8517 <unknown>
+#7 0x5fc4d14be38e <unknown>
+#8 0x5fc4d14bd19e <unknown>
+#9 0x5fc4d14c0109 <unknown>
+#10 0x5fc4d153784e <unknown>
+#11 0x5fc4d1537423 <unknown>
+#12 0x5fc4d1536c39 <unknown>
+#13 0x5fc4d14f1cd7 <unknown>
+#14 0x5fc4d14f0fee <unknown>
+#15 0x5fc4d14f1ac1 <unknown>
+#16 0x5fc4d1b3c7ac <unknown>
+#17 0x5fc4d1b3afb5 <unknown>
+#18 0x5fc4d1b26315 <unknown>
+#19 0x5fc4d1b3bc1a <unknown>
+#20 0x5fc4d1b0ebf9 <unknown>
+#21 0x5fc4d1b63ef8 <unknown>
+#22 0x5fc4d1b64095 <unknown>
+#23 0x5fc4d1b78183 <unknown>
+#24 0x72222aeabe6b <unknown>
+#25 0x72222af3f55c <unknown>
+
+[21:54:57] [GOV] Abrindo SIPII...
+[21:55:43]   [GOV] RENDA FIXA: 2 fundos.
+[21:55:47]   [GOV] RENDA FIXA REFERENCIADO: 3 fundos.
+[21:55:53]   [GOV] RENDA FIXA CURTO PRAZO: 3 fundos.
+[21:56:00]   [GOV] MULTIMERCADO: 6 fundos.
+[21:56:06]   [GOV] ACOES: 4 fundos.
+[21:56:07] [RPPS] Abrindo SIPII...
+[21:57:07] [RPPS] Erro geral: Message: stale element reference: stale element not found
+  (Session info: chrome=156.0.8078.47); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+#0 0x653f9b1b07ea <unknown>
+#1 0x653f9aaef9e5 <unknown>
+#2 0x653f9aaff243 <unknown>
+#3 0x653f9aafe743 <unknown>
+#4 0x653f9aaff549 <unknown>
+#5 0x653f9aaf538e <unknown>
+#6 0x653f9aaff517 <unknown>
+#7 0x653f9aaf538e <unknown>
+#8 0x653f9aaf419e <unknown>
+#9 0x653f9aaf7109 <unknown>
+#10 0x653f9ab6e84e <unknown>
+#11 0x653f9ab6e423 <unknown>
+#12 0x653f9ab6dc39 <unknown>
+#13 0x653f9ab28cd7 <unknown>
+#14 0x653f9ab27fee <unknown>
+#15 0x653f9ab28ac1 <unknown>
+#16 0x653f9b1737ac <unknown>
+#17 0x653f9b171fb5 <unknown>
+#18 0x653f9b15d315 <unknown>
+#19 0x653f9b172c1a <unknown>
+#20 0x653f9b145bf9 <unknown>
+#21 0x653f9b19aef8 <unknown>
+#22 0x653f9b19b095 <unknown>
+#23 0x653f9b1af183 <unknown>
+#24 0x785b51cabe6b <unknown>
+#25 0x785b51d3f55c <unknown>
+
+[21:57:08] [TODOS] Abrindo SIPII...
+[21:58:01]   [TODOS] RENDA FIXA SIMPLES: 2 fundos.
+[21:58:53]   [TODOS] RENDA FIXA: 42 fundos.
+[21:59:08]   [TODOS] RENDA FIXA REFERENCIADO: 8 fundos.
+[21:59:16]   [TODOS] RENDA FIXA CURTO PRAZO: 3 fundos.
+[21:59:33]   [TODOS] MULTIMERCADO: 14 fundos.
+[21:59:38]   [TODOS] CAMBIAL: 1 fundos.
+[22:00:16]   [TODOS] ACOES: 25 fundos.
+[22:00:21]   [TODOS] FUNDO DE INDICE: 1 fundos.
+[22:00:21] ETAPA 3 — Associando URLs (estáticas + dinâmicas)...
+[22:00:21]   Dicionário estático : 116 entradas
+[22:00:21]   URLs encontradas    : 134/164
+[22:00:21]   Sem URL             : 30/164
+[22:00:21]   Fundos SEM URL:
+[22:00:21]     - CAIXA FIC FIF EXCLUSIVO FUNC RF CREDITO PRIVADO LP RESP LTDA
+[22:00:21]     - CAIXA IMPULSO DEB INC FIF INC INFRA RF CRÉD PRIV LP RESP LTDA - GERAL (2) (
+[22:00:21]     - CAIXA IMPULSO SINGULAR DEB INC FIF INC INFRA RF CRÉD PRIV LP RESP LTDA - SI
+[22:00:21]     - CAIXA EXPERT VINLAND DEB IN INFRA RF CRED PRIV LP RESP LTDA (1) (2)
+[22:00:21]     - CAIXA EXPERT ABSOLUTE CRETA FIC FIF RF CRED PRIV LP - RESP LTDA (1)
+[22:00:21]     - CAIXA EXPERT VOX DESENV SUSTENTAVEL IS RF CRED PRIV LP - RESP LTDA (1) (2)
+[22:00:21]     - CAIXA MAXI FIC FIF RENDA FIXA CRED PRIV LP - RESP LTDA
+[22:00:21]     - CAIXA SIGMA FIC FIF RF REF DI LP - RESP LTDA (2) (3)
+[22:00:21]     - CAIXA SIGMA FUNCIONARIOS FIC FIF RF REF DI LP - RESP LTDA (2)
+[22:00:21]     - CAIXA SIGMA PRIVATE FIC FIF REF DI RF LONGO PRAZO
+[22:00:21]     - CAIXA SIGMA SINGULAR FIC FIF RF REF DI LP RESP LTDA
+[22:00:21]     - CAIXA MEGA FIC FIF RF REF DI LONGO PRAZO - RESP LTDA
+[22:00:21]     - CAIXA TURQUESA CIC RENDA FIXA CURTO PRAZO RESP LTDA
+[22:00:21]     - CAIXA CARTEIRA QUANT DUO FIC FIF MM LP RESP LTDA (1) (2)
+[22:00:21]     - CAIXA CARTEIRA QUANT QUALI FIC FIF MM LP RESP LTDA (1) (2)
+[22:00:21]     - CAIXA CARTEIRA QUANT UNO FIC FIF MM LP RESP LTDA (1) (2)
+[22:00:21]     - CAIXA FIC FIF FUNCIONARIOS ESTRATEGIA LIVRE MULTIMERCADO LP RESP LTDA (1)
+[22:00:21]     - CAIXA HASHDEX NASDAQ CRYPTO INDEX FIC FIF MM RESP LTDA (1)
+[22:00:21]     - CAIXA FIC FIM CAPITAL PROTEGIDO CICLICO II LP - RL (1)
+[22:00:21]     - CAIXA ATENA FIC FIF AÇÕES FUNCIONÁRIOS LIVRE QUANT RESP LTDA
+[22:00:21]     - CAIXA ATENA FIC FIF AÇÕES LIVRE QUANT RESP LTDA
+[22:00:21]     - CAIXA FMP-FGTS ELETROBRAS MIGRACAO
+[22:00:21]     - CAIXA FMP-FGTS ELETROBRAS RESP LTDA
+[22:00:21]     - CAIXA FMP-FGTS PETROBRÁS IV RESP LTDA
+[22:00:21]     - CAIXA FMP-FGTS VALE RIO DOCE II RESP LTDA
+[22:00:21]     - CAIXA FMP-FGTS CL ABSOLUTO RESP LTDA
+[22:00:21]     - CAIXA FMP-FGTS VALE RIO DOCE MIGRAÇÃO RESP LTDA
+[22:00:21]     - CAIXA FMP-FGTS PETROBRÁS II RESP LTDA
+[22:00:21]     - CAIXA FMP-FGTS VALE RIO DOCE I RESP LTDA
+[22:00:21]     - CAIXA FMP-FGTS PETROBRÁS III RESP LTDA
+[22:00:21] ETAPA 4 — Baixando JSON da CAIXA Asset...
+[22:00:26]   JSON Asset salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_asset.json
+[22:00:26]   Histórico JSON salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_asset_20261102.json
+[22:00:26]   Fundos no JSON Asset: 209
+[22:00:26]   Asset matches encontrados: 158/164
+[22:00:26]   Asset sem match: 6/164
+[22:00:26] CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/dados_atuais.csv
+[22:00:26] Histórico CSV salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20261102.csv
+[22:00:27] Excel salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/sipii_caixa_20261102.xlsx
+[22:00:27] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
+[22:00:27] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261102.json
+[22:00:27] SUCESSO: 164 fundos consolidados e enriquecidos salvos.
