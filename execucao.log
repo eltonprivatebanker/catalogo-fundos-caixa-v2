@@ -10013,3 +10013,30 @@ Stacktrace:
 [22:00:27] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [22:00:27] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261102.json
 [22:00:27] SUCESSO: 164 fundos consolidados e enriquecidos salvos.
+[19:41:08] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[19:41:08] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[19:41:12]   [CAIXA] renda-fixa → +40 links (40 total)
+[19:41:14]   [CAIXA] referenciados → +4 links (44 total)
+[19:41:16]   [CAIXA] fundo-simples → +2 links (46 total)
+[19:41:18]   [CAIXA] curto-prazo → +1 links (47 total)
+[19:41:19]   [CAIXA] multimercado → +19 links (66 total)
+[19:41:21]   [CAIXA] cambiais → +1 links (67 total)
+[19:41:23]   [CAIXA] fundos-de-acoes → +12 links (79 total)
+[19:41:25]   [CAIXA] fundos-de-indices → +2 links (81 total)
+[19:41:26]   [CAIXA] renda-fixa → +8 links (89 total)
+[19:41:28]   [CAIXA] empresa → +5 links (94 total)
+[19:41:29]   [CAIXA] fmp-fgts → HTTP 404
+[19:41:30]   [CAIXA] rpps → +8 links (102 total)
+[19:41:31] [CAIXA] Total URLs dinâmicas: 102
+[19:41:31] ETAPA 2 — Coletando dados do SIPII...
+[19:41:36] [PF] Abrindo SIPII...
+[19:43:36] [PF] Erro geral: HTTPConnectionPool(host='localhost', port=42781): Read timed out. (read timeout=120)
+[19:46:37] [PJ] Abrindo SIPII...
+[19:48:37] [PJ] Erro geral: HTTPConnectionPool(host='localhost', port=33533): Read timed out. (read timeout=120)
+[19:51:37] [GOV] Abrindo SIPII...
+[19:53:37] [GOV] Erro geral: HTTPConnectionPool(host='localhost', port=54193): Read timed out. (read timeout=120)
+[19:53:48] [RPPS] Abrindo SIPII...
+[19:55:49] [RPPS] Erro geral: HTTPConnectionPool(host='localhost', port=44081): Read timed out. (read timeout=120)
+[19:56:01] [TODOS] Abrindo SIPII...
+[19:58:02] [TODOS] Erro geral: HTTPConnectionPool(host='localhost', port=53947): Read timed out. (read timeout=120)
+[19:58:12] ATENÇÃO: Nenhum dado coletado.
