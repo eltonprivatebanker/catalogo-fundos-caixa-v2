@@ -10256,3 +10256,31 @@ Stacktrace:
 [20:16:48] JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/data/fundos_unificado.json
 [20:16:48] Histórico JSON unificado salvo: /home/runner/work/catalogo-fundos-caixa-v2/catalogo-fundos-caixa-v2/historico/json/fundos_unificado_20261105.json
 [20:16:48] SUCESSO: 183 fundos consolidados e enriquecidos salvos.
+[19:36:40] INICIANDO ROBÔ SIPII v11 - SIPII + ASSET JSON
+[19:36:40] ETAPA 1 — Coletando URLs dinâmicas (12 páginas CAIXA)...
+[19:36:44]   [CAIXA] renda-fixa → +40 links (40 total)
+[19:36:46]   [CAIXA] referenciados → +4 links (44 total)
+[19:36:47]   [CAIXA] fundo-simples → +2 links (46 total)
+[19:36:49]   [CAIXA] curto-prazo → +1 links (47 total)
+[19:36:50]   [CAIXA] multimercado → +19 links (66 total)
+[19:36:52]   [CAIXA] cambiais → +1 links (67 total)
+[19:36:54]   [CAIXA] fundos-de-acoes → +12 links (79 total)
+[19:36:56]   [CAIXA] fundos-de-indices → +2 links (81 total)
+[19:36:57]   [CAIXA] renda-fixa → +8 links (89 total)
+[19:36:59]   [CAIXA] empresa → +5 links (94 total)
+[19:37:00]   [CAIXA] fmp-fgts → HTTP 404
+[19:37:01]   [CAIXA] rpps → +8 links (102 total)
+[19:37:02] [CAIXA] Total URLs dinâmicas: 102
+[19:37:02] ETAPA 2 — Coletando dados do SIPII...
+[19:37:09] [PF] Abrindo SIPII...
+[19:39:09] [PF] Erro geral: HTTPConnectionPool(host='localhost', port=58605): Read timed out. (read timeout=120)
+[19:42:09] [PJ] Abrindo SIPII...
+[19:44:09] [PJ] Erro geral: HTTPConnectionPool(host='localhost', port=40841): Read timed out. (read timeout=120)
+[19:47:10] [GOV] Abrindo SIPII...
+[19:49:10] [GOV] Erro geral: HTTPConnectionPool(host='localhost', port=40209): Read timed out. (read timeout=120)
+[19:52:10] [RPPS] Abrindo SIPII...
+[19:54:10] [RPPS] Erro geral: HTTPConnectionPool(host='localhost', port=50705): Read timed out. (read timeout=120)
+[19:57:10] [TODOS] Abrindo SIPII...
+[19:57:46] [TODOS] Erro geral: Message: Link não encontrado: TODOS; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+
+[19:57:46] ATENÇÃO: Nenhum dado coletado.
